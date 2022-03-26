@@ -3,7 +3,6 @@ import {useAuth} from "../../context";
 
 const Header = () => {
     const { authState } = useAuth();
-    console.log(authState);
     return (
       <header className="header header-shadow flex-column">
         <div className="flex-row justify-content-space-between align-center w-100">
