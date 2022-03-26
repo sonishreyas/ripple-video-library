@@ -21,6 +21,9 @@ const loginHandler = (e, location, navigate, loginState, authDispatch) => {
 				type: "UPDATE_USER",
 			});
 			localStorage.setItem("token", response.data.encodedToken);
+			localStorage.setItem("email", response.data.foundUser.email);
+			localStorage.setItem("firstName", response.data.foundUser.firstName);
+			localStorage.setItem("lastName", response.data.foundUser.lastName);
 			navigate(location.state.state);
 		} catch (error) {
 			console.log(error);
@@ -60,6 +63,9 @@ const registerHandler = (
 				type: "UPDATE_USER",
 			});
 			localStorage.setItem("token", response.data.encodedToken);
+			localStorage.setItem("email", response.data.createdUser.email);
+			localStorage.setItem("firstName", response.data.createdUser.firstName);
+			localStorage.setItem("lastName", response.data.createdUser.lastName);
 			navigate(location.state.state);
 		} catch (error) {
 			console.log(error);
