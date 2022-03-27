@@ -19,3 +19,39 @@
 .horizontal-tabs-content {
 	display: block;
 }
+
+.navbar-rp-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar-rp-section > * {
+	padding: 0.4rem;
+}
+
+.grid-container .nav {
+	width: 12rem;
+}
+
+.grid-container .main {
+	grid-column: 3/13;
+}
+
+@media screen and (max-width: 870px) {
+	.navbar-rp-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.navbar-rp-section > * {
+		padding: 0.5rem;
+	}
+
+	.grid-container .nav {
+		width: 20rem;
+	}
+}
