@@ -8,7 +8,7 @@ const VideoCard = () => {
       <div className="products-container flex-row align-center flex-gap-2 flex-wrap">
       {
         videosData.length !== 0 ?  
-          videosData.map(({_id, title, channelName, channelSubscribers, verified, views, duration, likes, description, channelProfileURL, thumbnailURL }) =>
+          videosData.map(({_id, title, channelName, channelSubscribers, verified, views, duration, likes, description, channelProfileURL, thumbnailURL, videoURL }) =>
           <article className="cursor-pointer card video-card card-shadow p-5 b-radius-2" key={_id}>
             <section className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2">
               <img

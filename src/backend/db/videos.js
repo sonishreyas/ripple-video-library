@@ -13,6 +13,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/PJSnBPGtjMI/hq720_live.jpg?sqp=CPCsgZIG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOzwX6DbFKcZ_VqZ9eMQJEOUoLDg",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLSAAX9t_iv6FTNCV1r83YQC7gBJZNcQ0sKq9yZs3Q=s68-c-k-c0x00ffffff-no-rj",
+		videoIframe: `<iframe width="1280" height="720" src="https://www.youtube.com/embed/dfMz4PacB1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
 		channelSubscribers: 890,
 		verified: true,
 		views: 10,
@@ -30,6 +31,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/PJSnBPGtjMI/hq720_live.jpg?sqp=CPCsgZIG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOzwX6DbFKcZ_VqZ9eMQJEOUoLDg",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLSAAX9t_iv6FTNCV1r83YQC7gBJZNcQ0sKq9yZs3Q=s68-c-k-c0x00ffffff-no-rj",
+		videoIframe: `<iframe width="1280" height="720" src="https://www.youtube.com/embed/dfMz4PacB1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
 		channelSubscribers: 890,
 		verified: false,
 		views: 10,
