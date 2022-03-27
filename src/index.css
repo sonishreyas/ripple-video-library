@@ -39,6 +39,34 @@
 	grid-column: 3/13;
 }
 
+/* Video Card */
+.video-card {
+	width: 42.2rem;
+	height: auto;
+}
+
+.video-card-image-container {
+	width: 40rem;
+	height: 22.5rem;
+}
+
+.video-card-image {
+	width: 100%;
+	height: auto;
+}
+
+.fa-circle {
+	font-size: 0.5rem;
+}
+
+.video-btn-container {
+	display: none;
+}
+
+.video-card:hover .video-btn-container {
+	display: flex;
+}
+
 @media screen and (max-width: 870px) {
 	.navbar-rp-section {
 		display: flex;
