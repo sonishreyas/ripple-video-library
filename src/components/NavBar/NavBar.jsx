@@ -21,7 +21,7 @@ const NavBar = ({props}) => {
                 <li className="rui-drawer-content m-10">
                     <Link to={"/"} className="rui-drawer-links">
                         <section className="navbar-rp-section">
-                            <span><i class="fa-solid fa-house-chimney social"></i></span>
+                            <span><i className="fa-solid fa-house-chimney social"></i></span>
                             <span className="rui-drawer-content--text p-2 social text-center">Home</span>
                         </section>
                     </Link>
@@ -29,7 +29,7 @@ const NavBar = ({props}) => {
                 <li className="rui-drawer-content m-10">
                     <Link to={"/explore"} className="rui-drawer-links">
                         <section className="navbar-rp-section">
-                            <span><i class="fa-solid fa-compass social"></i></span>
+                            <span><i className="fa-solid fa-compass social"></i></span>
                             <span className="rui-drawer-content--text p-2 social text-center">Explore</span>
                         </section>
                     </Link>
@@ -39,14 +39,14 @@ const NavBar = ({props}) => {
                     authState.token !== null ?
                         <Link to={"/watchlater"} className="rui-drawer-links">
                             <section className="navbar-rp-section">
-                                <span><i class="fa-solid fa-clock social"></i></span>
+                                <span><i className="fa-solid fa-clock social"></i></span>
                                 <span className="rui-drawer-content--text p-2 social text-center">Watch Later</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/watchlater'}} className="rui-drawer-links">
                             <section className="navbar-rp-section">
-                                <span><i class="fa-solid fa-clock social"></i></span>
+                                <span><i className="fa-solid fa-clock social"></i></span>
                                 <span className="rui-drawer-content--text p-2 social text-center">Watch Later</span>
                             </section>
                         </Link>
@@ -57,14 +57,14 @@ const NavBar = ({props}) => {
                     authState.token !== null ?
                         <Link to={"/liked"} className="rui-drawer-links">
                             <section className="navbar-rp-section">
-                                <span><i class="fa-solid fa-thumbs-up social"></i></span>
+                                <span><i className="fa-solid fa-thumbs-up social"></i></span>
                                 <span className="rui-drawer-content--text p-2 social text-center">Liked</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/liked'}} className="rui-drawer-links">
                             <section className="navbar-rp-section">
-                                <span><i class="fa-solid fa-thumbs-up social"></i></span>
+                                <span><i className="fa-solid fa-thumbs-up social"></i></span>
                                 <span className="rui-drawer-content--text p-2 social text-center">Liked</span>
                             </section>
                         </Link>
@@ -93,14 +93,14 @@ const NavBar = ({props}) => {
                     authState.token !== null ?
                         <Link to={"/history"} className="rui-drawer-links">
                             <section className="navbar-rp-section">
-                                <span><i class="fa-solid fa-clock-rotate-left social"></i></span>
+                                <span><i className="fa-solid fa-clock-rotate-left social"></i></span>
                                 <span className="rui-drawer-content--text p-2 social text-center">Watch History</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/history'}} className="rui-drawer-links">
                             <section className="navbar-rp-section">
-                                <span><i class="fa-solid fa-clock-rotate-left social"></i></span>
+                                <span><i className="fa-solid fa-clock-rotate-left social"></i></span>
                                 <span className="rui-drawer-content--text p-2 social text-center">Watch History</span>
                             </section>
                         </Link>

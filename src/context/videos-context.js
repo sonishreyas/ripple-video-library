@@ -60,7 +60,6 @@ const VideosProvider = ({ children }) => {
 				videosData: filteredVideosData,
 				categoriesData: categoriesData,
 				videosDispatch,
-				clearFilters: defaultVideosState,
 			}}
 		>
 			{children}

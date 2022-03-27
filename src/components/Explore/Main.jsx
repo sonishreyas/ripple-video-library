@@ -1,7 +1,8 @@
+import { VideoCard } from "./";
 const Main = () => {
     return (
-        <main class="main">
-            <h1>This is explore page </h1>
+        <main className="main">
+            <VideoCard />
         </main>
     )
 }

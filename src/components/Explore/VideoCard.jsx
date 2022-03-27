@@ -1,62 +1,69 @@
+import { useVideos, useAuth } from "../../context";
+
 const VideoCard = () => {
+    const {videosData} = useVideos();
+    const {authState} = useAuth();
+  
     return (
-        <article class="card video-card card-shadow p-5 b-radius-2">
-          <section
-            class="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2"
-          >
-            <img
-              src="https://i.ytimg.com/vi/PJSnBPGtjMI/hq720_live.jpg?sqp=CPCsgZIG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOzwX6DbFKcZ_VqZ9eMQJEOUoLDg"
-              alt="Puma Sneakers"
-              class="video-card-image b-radius-2"
-            />
-          </section>
-          <section class="flex-row justify-content-start align-start">
-            <section>
+      <div className="products-container flex-row align-center flex-gap-2 flex-wrap">
+      {
+        videosData.length !== 0 ?  
+          videosData.map(({_id, title, channelName, channelSubscribers, verified, views, duration, likes, description, channelProfileURL, thumbnailURL }) =>
+          <article className="cursor-pointer card video-card card-shadow p-5 b-radius-2" key={_id}>
+            <section className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2">
               <img
-                src="https://yt3.ggpht.com/ytc/AKedOLSAAX9t_iv6FTNCV1r83YQC7gBJZNcQ0sKq9yZs3Q=s68-c-k-c0x00ffffff-no-rj"
-                alt="User Profile Picture"
-                class="avatar b-radius-circle l my-5"
-                aria-label="User Profile Avatar"
+                src={thumbnailURL}
+                alt={title}
+                title={title}
+                className="video-card-image b-radius-2"
               />
-          </section>
-          <section class="card-content p-5 pb-0">
-            <h3 class="card-title text-wrap">
-              COMEDIANS ON BOARD GANG WAR | GRAND FINALE
-            </h3>
-            <p class="card-category py-5">
-              Samay Raina <i class="fa-solid fa-circle-check mx-2 text-cta-color"></i>
-            </p>
-            <span
-              class="card-price-tag flex-row align-center flex-gap-half text-bold"
-            >
-              <p class="p-0 m-0">
-                24K views
+            </section>
+            <section className="flex-row justify-content-start align-start">
+              <section>
+                <img
+                  src={channelProfileURL}
+                  alt={channelName}
+                  title={channelName}
+                  className="avatar b-radius-circle l my-5"
+                  aria-label="Channel profile picture"
+                />
+            </section>
+            <section className="card-content p-5 pb-0">
+              <h3 className="card-title text-wrap">
+                {title}
+              </h3>
+              <p className="card-category py-5">
+                {channelName} {verified && <i className="fa-solid fa-circle-check mx-2 text-cta-color"></i>}
               </p>
-              <i class="fa-solid fa-circle"></i>
-              <p class="time p-0 m-0">2 days ago</p>
-            </span>
+              <span className="card-price-tag flex-row align-center flex-gap-half text-bold">
+                <p className="p-0 m-0">
+                  { views>1000? views > 1000000 ? (views/1000000) + "M" : (views/1000) + "K" : views } views
+                </p>
+                <i className="fa-solid fa-circle"></i>
+                <p className="p-0 m-0">
+                  { likes >1000? likes > 1000000 ? (likes/1000000) + "M" : (likes/1000) + "K" : likes } likes
+                </p>
+              </span>
+            </section>
           </section>
-        </section>
-        <section
-          class="video-btn-container flex-row justify-content-center flex-wrap"
-        >
-          <button
-            class="primary-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
-          >
-            <span class="wishlist-icon"
-              ><i class="fas fa-folder-plus social"></i
-            ></span>
-            <p>Add to Playlist</p>
-          </button>
-          <button
-            class="outline-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
-          >
-            <span class="wishlist-icon"
-              ><i class="fa-solid fa-clock social"></i
-            ></span>
-            <p>Watch later</p>
-          </button>
-        </section>
-      </article>
+          <section className="video-btn-container flex-row justify-content-center flex-wrap">
+            <button className="cursor-pointer primary-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1">
+              <span className="wishlist-icon">
+                <i className="fas fa-folder-plus social"></i>
+              </span>
+              <p>Add to Playlist</p>
+            </button>
+            <button className="cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1">
+              <span className="wishlist-icon">
+                <i className="fa-solid fa-clock social"></i>
+              </span>
+              <p>Watch later</p>
+            </button>
+          </section>
+        </article> 
+      ): <h1>Loading...</h1>}
+      </div>
     )
 }
+
+export {VideoCard};

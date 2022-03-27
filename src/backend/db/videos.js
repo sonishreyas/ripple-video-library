@@ -9,8 +9,12 @@ export const videos = [
 		_id: uuid(),
 		title: "COMEDIANS ON BOARD GANG WAR | GRAND FINALE",
 		channelName: "Samay Raina",
+		thumbnailURL:
+			"https://i.ytimg.com/vi/PJSnBPGtjMI/hq720_live.jpg?sqp=CPCsgZIG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOzwX6DbFKcZ_VqZ9eMQJEOUoLDg",
+		channelProfileURL:
+			"https://yt3.ggpht.com/ytc/AKedOLSAAX9t_iv6FTNCV1r83YQC7gBJZNcQ0sKq9yZs3Q=s68-c-k-c0x00ffffff-no-rj",
 		channelSubscribers: 890,
-		verified: false,
+		verified: true,
 		views: 10,
 		duration: "3:34:17",
 		likes: 10,
@@ -22,6 +26,10 @@ export const videos = [
 		_id: uuid(),
 		title: "COMEDIANS ON BOARD GANG WAR | GRAND FINALE",
 		channelName: "Samay Raina",
+		thumbnailURL:
+			"https://i.ytimg.com/vi/PJSnBPGtjMI/hq720_live.jpg?sqp=CPCsgZIG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOzwX6DbFKcZ_VqZ9eMQJEOUoLDg",
+		channelProfileURL:
+			"https://yt3.ggpht.com/ytc/AKedOLSAAX9t_iv6FTNCV1r83YQC7gBJZNcQ0sKq9yZs3Q=s68-c-k-c0x00ffffff-no-rj",
 		channelSubscribers: 890,
 		verified: false,
 		views: 10,

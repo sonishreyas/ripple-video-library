@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const useVideosDataHook = () => {
 	const [videosData, setVideosData] = useState([]);
@@ -6,8 +7,7 @@ const useVideosDataHook = () => {
 		(async () => {
 			try {
 				const response = await axios.get(`/api/videos`);
-				console.log(response);	
-				setVideosData(response.json().videos);
+				setVideosData(response.data.videos);
 			} catch (error) {
 				console.log(error);
 			}
