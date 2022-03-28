@@ -1,5 +1,5 @@
 import { useVideos, useAuth } from "../../context";
-
+import { Link } from "react-router-dom";
 const VideoCard = () => {
     const {videosData} = useVideos();
     const {authState} = useAuth();
@@ -10,14 +10,14 @@ const VideoCard = () => {
         videosData.length !== 0 ?  
           videosData.map(({_id, title, channelName, channelSubscribers, verified, views, duration, likes, description, channelProfileURL, thumbnailURL, videoURL }) =>
           <article className="cursor-pointer card video-card card-shadow p-5 b-radius-2" key={_id}>
-            <section className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2">
+            <Link to={`videos/${_id}`} className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2">
               <img
                 src={thumbnailURL}
                 alt={title}
                 title={title}
                 className="video-card-image b-radius-2"
               />
-            </section>
+            </Link>
             <section className="flex-row justify-content-start align-start">
               <section>
                 <img
