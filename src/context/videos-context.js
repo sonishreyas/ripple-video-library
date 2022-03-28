@@ -14,7 +14,7 @@ const getDefaultVideosState = (categoriesData) => {
 		categoryType: "GET_ALL",
 		categoryName: "",
 		categoryFilters: categoriesData.reduce((prev, curr) => {
-			prev[curr.name] = false;
+			prev[curr.categoryName] = false;
 			return prev;
 		}, {}),
 	};
@@ -52,7 +52,7 @@ const VideosProvider = ({ children }) => {
 			);
 		}
 	}, [videosData, videosState]);
-
+	console.log("data = ", filteredVideosData);
 	return (
 		<VideosContext.Provider
 			value={{
@@ -60,6 +60,7 @@ const VideosProvider = ({ children }) => {
 				videosData: filteredVideosData,
 				categoriesData: categoriesData,
 				videosDispatch,
+				clearFilters: defaultVideosState,
 			}}
 		>
 			{children}

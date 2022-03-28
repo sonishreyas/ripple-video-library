@@ -4,7 +4,7 @@ const Explore = () => {
         <div className="grid-container">
             <Header />
             <Main />
-            <NavBar/>
+            <NavBar explore={true}/>
             <Footer />
         </div>
     )

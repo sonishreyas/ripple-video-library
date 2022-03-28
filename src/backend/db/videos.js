@@ -19,7 +19,7 @@ export const videos = [
 		views: 10,
 		duration: "3:34:17",
 		likes: 10,
-		category: ["chess", "gaming", "stream"],
+		category: ["chess", "stream"],
 		description:
 			"Arena is a free community gaming website. You can discover new gaming communities OR create your own. It’s a play-to-earn platform, so the more games you play, the more chances you have to earn and win prizes. You can make our own club on Arena for your schools, colleges and offices and make your events super cool/professional.",
 	},
@@ -37,7 +37,7 @@ export const videos = [
 		views: 10,
 		duration: "3:34:17",
 		likes: 10,
-		category: ["chess", "gaming", "stream"],
+		category: ["gaming", "stream"],
 		description:
 			"Arena is a free community gaming website. You can discover new gaming communities OR create your own. It’s a play-to-earn platform, so the more games you play, the more chances you have to earn and win prizes. You can make our own club on Arena for your schools, colleges and offices and make your events super cool/professional.",
 	},

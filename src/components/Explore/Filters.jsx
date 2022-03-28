@@ -1,15 +1,51 @@
 import { useVideos } from "../../context"
 
 const Filters = () => {
-    const {categoriesData, videosState} = useVideos();
+    const {categoriesData, videosState, videosDispatch, clearFilters} = useVideos();
+
+    const categoryFilterHandler = (e, name) => videosDispatch({
+        categoryName: name,
+        categoryType: "FILTER_CATEGORY",
+        categoryFilters: ((categoryFilters, e) => {
+            const newCategoryFilters = { ...categoryFilters };
+            newCategoryFilters[name] = e.target.checked;
+            return newCategoryFilters;
+          })(videosState.categoryFilters, e)
+
+    })
+    const checkResetCatergoryFilters = () => Object.keys(videosState.categoryFilters).filter((item) => videosState.categoryFilters[item]).length > 0 ? false : true; 
+    
+    const resetFilters = () => videosDispatch({...clearFilters});
     return (
-        <div class="chip-container flex-row flex-wrap flex-gap-1 w-100">
+        <div className="flex-row flex-wrap flex-gap-1 w-100 my-8">
+            {
+            (categoriesData.length !== 0 && Object.keys(videosState).length !== 0) &&
+                <label className={`basic-chip flex-row align-center flex-wrap flex-gap-1 video-filters ${checkResetCatergoryFilters() ? "filter-chip-selected" : ""}`} key="ALL">
+                    <input
+                        className="filters"
+                        type="checkbox"
+                        value="FILTER_CATEGORY"
+                        checked={ checkResetCatergoryFilters() ? true : false}
+                        onChange={resetFilters}
+                    />
+                    <i className="fa-solid fa-circle-check"></i>
+                    <p className="basic-chip-content">All</p>
+                </label>
+            }   
             {
                 (categoriesData.length !== 0 && Object.keys(videosState).length !== 0) && 
-                categoriesData.map(({categoryName}) => 
-                    <section class="basic-chip flex-row align-center flex-wrap flex-gap-1">
-                        <p class="basic-chip-content">{categoryName}</p>
-                    </section>  
+                categoriesData.map(({_id, categoryName}) =>
+                    <label className={`basic-chip flex-row align-center flex-wrap flex-gap-1 video-filters ${videosState.categoryFilters[categoryName] ? "filter-chip-selected" : ""}`} key={_id}>
+                        <input
+                            className="filters"
+                            type="checkbox"
+                            value="FILTER_CATEGORY"
+                            checked={videosState.categoryFilters[categoryName] ? true : false}
+                            onChange={(e) => categoryFilterHandler(e,categoryName)}
+                        />
+                        <i className="fa-solid fa-circle-check"></i>
+                        <p className="basic-chip-content">{categoryName}</p>
+                    </label>
                 )
             }
         </div>

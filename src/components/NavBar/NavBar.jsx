@@ -1,7 +1,7 @@
 
 import {Link} from "react-router-dom";
 import {useAuth} from "../../context"
-const NavBar = ({props}) => {
+const NavBar = (props) => {
 
     const {authState} = useAuth();
     return (
@@ -20,17 +20,17 @@ const NavBar = ({props}) => {
                 </li>
                 <li className="rui-drawer-content m-10">
                     <Link to={"/"} className="rui-drawer-links">
-                        <section className="navbar-rp-section">
-                            <span><i className="fa-solid fa-house-chimney social"></i></span>
-                            <span className="rui-drawer-content--text p-2 social text-center">Home</span>
+                        <section className={`navbar-rp-section ${ props.home ? "text-cta-color": ""}`}>
+                            <span><i className="fa-solid fa-house-chimney"></i></span>
+                            <span className="rui-drawer-content--text p-2 text-center">Home</span>
                         </section>
                     </Link>
                 </li>
                 <li className="rui-drawer-content m-10">
                     <Link to={"/explore"} className="rui-drawer-links">
-                        <section className="navbar-rp-section">
-                            <span><i className="fa-solid fa-compass social"></i></span>
-                            <span className="rui-drawer-content--text p-2 social text-center">Explore</span>
+                        <section className={`navbar-rp-section ${ props.explore ? "text-cta-color": ""}`}>
+                            <span><i className="fa-solid fa-compass"></i></span>
+                            <span className="rui-drawer-content--text p-2 text-center">Explore</span>
                         </section>
                     </Link>
                 </li>
@@ -38,16 +38,16 @@ const NavBar = ({props}) => {
                     { 
                     authState.token !== null ?
                         <Link to={"/watchlater"} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fa-solid fa-clock social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Watch Later</span>
+                            <section className={`navbar-rp-section ${ props.watchlater ? "text-cta-color": ""}`}>
+                                <span><i className="fa-solid fa-clock"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Watch Later</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/watchlater'}} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fa-solid fa-clock social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Watch Later</span>
+                            <section className={`navbar-rp-section ${ props.watchlater ? "text-cta-color": ""}`}>
+                                <span><i className="fa-solid fa-clock"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Watch Later</span>
                             </section>
                         </Link>
                     }      
@@ -56,16 +56,16 @@ const NavBar = ({props}) => {
                     { 
                     authState.token !== null ?
                         <Link to={"/liked"} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fa-solid fa-thumbs-up social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Liked</span>
+                            <section className={`navbar-rp-section ${ props.liked ? "text-cta-color": ""}`}>
+                                <span><i className="fa-solid fa-thumbs-up"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Liked</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/liked'}} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fa-solid fa-thumbs-up social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Liked</span>
+                            <section className={`navbar-rp-section ${ props.liked ? "text-cta-color": ""}`}>
+                                <span><i className="fa-solid fa-thumbs-up"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Liked</span>
                             </section>
                         </Link>
                     }      
@@ -74,16 +74,16 @@ const NavBar = ({props}) => {
                     { 
                     authState.token !== null ?
                         <Link to={"/playlist"} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fas fa-folder-plus social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Playlist</span>
+                            <section className={`navbar-rp-section ${ props.playlist ? "text-cta-color": ""}`}>
+                                <span><i className="fas fa-folder-plus"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Playlist</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/playlist'}} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fas fa-folder-plus social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Playlist</span>
+                            <section className={`navbar-rp-section ${ props.playlist ? "text-cta-color": ""}`}>
+                                <span><i className="fas fa-folder-plus"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Playlist</span>
                             </section>
                         </Link>
                     }      
@@ -92,16 +92,16 @@ const NavBar = ({props}) => {
                     { 
                     authState.token !== null ?
                         <Link to={"/history"} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fa-solid fa-clock-rotate-left social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Watch History</span>
+                            <section className={`navbar-rp-section ${ props.history ? "text-cta-color": ""}`}>
+                                <span><i className="fa-solid fa-clock-rotate-left"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Watch History</span>
                             </section>
                         </Link>
                             :
                         <Link to={"/auth"} state={{state:'/history'}} className="rui-drawer-links">
-                            <section className="navbar-rp-section">
-                                <span><i className="fa-solid fa-clock-rotate-left social"></i></span>
-                                <span className="rui-drawer-content--text p-2 social text-center">Watch History</span>
+                            <section className={`navbar-rp-section ${ props.history ? "text-cta-color": ""}`}>
+                                <span><i className="fa-solid fa-clock-rotate-left"></i></span>
+                                <span className="rui-drawer-content--text p-2 text-center">Watch History</span>
                             </section>
                         </Link>
                     }      

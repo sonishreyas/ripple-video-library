@@ -67,6 +67,26 @@
 	display: flex;
 }
 
+.video-filters {
+	background-color: var(--secondary-background-color);
+	font-size: 1.4rem;
+}
+
+.nav > * {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.nav .fas,
+.nav .fa-solid {
+	font-size: 1.5rem;
+}
+
+.filter-chip-selected {
+	color: var(--cta-color);
+	background-color: var(--tertiary-color);
+}
+
 @media screen and (max-width: 870px) {
 	.navbar-rp-section {
 		display: flex;
