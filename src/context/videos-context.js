@@ -52,7 +52,7 @@ const VideosProvider = ({ children }) => {
 			);
 		}
 	}, [videosData, videosState]);
-	console.log("data = ", filteredVideosData);
+
 	return (
 		<VideosContext.Provider
 			value={{
