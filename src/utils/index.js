@@ -1,1 +1,7 @@
-export { loginHandler, registerHandler } from "./authentication";
+export {
+	loginHandler,
+	registerHandler,
+	setValueHandler,
+	setTestHandler,
+	setFocusHandler,
+} from "./authentication";
