@@ -1,2 +1,8 @@
-export { loginHandler, registerHandler } from "./authentication";
 export { CategoryVideos, VideosCompose } from "./filters";
+export {
+	loginHandler,
+	registerHandler,
+	setValueHandler,
+	setTestHandler,
+	setFocusHandler,
+} from "./authentication";
