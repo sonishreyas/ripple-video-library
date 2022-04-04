@@ -1,12 +1,13 @@
-import {Header, Footer, Main} from ".";
+import { Header, Footer, Main, NavBar } from ".";
 const Home = () => {
-    return (
-        <div className="grid-3-rows w-100">
-            <Header />
-            <Main />
-            <Footer />
-        </div>
-    )
-}
+	return (
+		<div className="grid-container">
+			<Header />
+			<Main />
+			<NavBar home={true} />
+			<Footer />
+		</div>
+	);
+};
 
 export { Home };
