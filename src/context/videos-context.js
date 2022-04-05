@@ -40,7 +40,7 @@ const VideosProvider = ({ children }) => {
 
 	useEffect(() => {
 		if (Object.keys(defaultVideosState).length !== 0) {
-			videosDispatch({ ...defaultVideosState });
+			videosDispatch({ type: "GET_DATA", payload: { ...defaultVideosState } });
 		}
 	}, [defaultVideosState]);
 

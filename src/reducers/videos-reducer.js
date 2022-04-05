@@ -1,25 +1,27 @@
 /**
  *
  * @param {Object} videosState State values for videos
- * @param {Array} videosAction The changed state
+ * @param {Array} payload The changed state
  * @returns Updates videosState value
  */
-const videosReducer = (videosState, videosAction) => {
-	switch (videosAction.categoryType) {
+const videosReducer = (videosState, { type, payload }) => {
+	switch (type) {
 		case "VIDEOS_SORT_BY":
 			return {
 				...videosState,
-				sortByType: videosAction.sortByType,
+				sortByType: payload.sortByType,
 			};
 		case "FILTER_CATEGORY":
 			return {
 				...videosState,
-				categoryName: videosAction.categoryName,
-				categoryType: videosAction.categoryType,
-				categoryFilters: { ...videosAction.categoryFilters },
+				categoryName: payload.categoryName,
+				categoryType: payload.categoryType,
+				categoryFilters: { ...payload.categoryFilters },
 			};
+		case "GET_DATA":
+			return { ...videosState, ...payload };
 		default:
-			return { ...videosState, ...videosAction };
+			return videosState;
 	}
 };
 

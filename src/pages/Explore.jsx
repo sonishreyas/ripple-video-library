@@ -1,4 +1,4 @@
-import { Explore } from "../components"; 
-const ExplorePage = () => <Explore />
+import { ExploreContent } from "../components";
+const ExplorePage = () => <ExploreContent />;
 
-export { ExplorePage }
+export { ExplorePage };

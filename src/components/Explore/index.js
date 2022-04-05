@@ -1,7 +1,6 @@
-export { Explore } from "./Explore";
 export { Header } from "../Header";
 export { Footer } from "../Footer";
-export { Main } from "./Main";
+export { ExploreContent } from "./ExploreContent";
 export { NavBar } from "../NavBar";
 export { VideoCard } from "./VideoCard";
 export { Filters } from "./Filters";

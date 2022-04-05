@@ -1,6 +1,4 @@
-import { Home } from "../components";
-const HomePage = () => {
-    return (<Home/>);
-}
+import { HomeContent } from "../components";
+const HomePage = () => <HomeContent />;
 
-export {HomePage};
+export { HomePage };
