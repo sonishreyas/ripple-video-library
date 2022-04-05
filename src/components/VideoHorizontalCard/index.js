@@ -1,0 +1,1 @@
+export { VideoHorizontalCard } from "./VideoHorizontalCard";

@@ -1,11 +1,15 @@
-import { useVideos, useAuth } from "../../context";
+import { useVideos, useWatchlater, useAuth } from "../../context";
 import { Link } from "react-router-dom";
+import { presentInArray } from "../../utils";
+import { WatchLaterButton } from ".";
+
 const VideoCard = () => {
 	const { videosData } = useVideos();
-
+	const { watchlaterState } = useWatchlater();
+	const { authState } = useAuth();
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
-			{videosData.length !== 0 ? (
+			{videosData.length ? (
 				videosData.map(
 					({
 						_id,
@@ -78,12 +82,15 @@ const VideoCard = () => {
 									</span>
 									<p>Add to Playlist</p>
 								</button>
-								<button className="cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1">
-									<span className="wishlist-icon">
-										<i className="fa-solid fa-clock social"></i>
-									</span>
-									<p>Watch later</p>
-								</button>
+								{authState.token !== null ? (
+									presentInArray(watchlaterState.itemsInWatchlater, _id) ? (
+										<WatchLaterButton btnType="remove" videoId={_id} />
+									) : (
+										<WatchLaterButton btnType="add" videoId={_id} />
+									)
+								) : (
+									<WatchLaterButton btnType="redirect" />
+								)}
 							</section>
 						</article>
 					)
