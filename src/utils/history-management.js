@@ -8,8 +8,7 @@ import { HEADERS } from "./headers";
  * @param {string} token encodedToken of user
  * @param {function} historyDispatch Reducer function
  */
-const addToHistoryHandler = (element, videoId, historyDispatch) => {
-	element.preventDefault();
+const addToHistoryHandler = (videoId, historyDispatch) => {
 	(async () => {
 		try {
 			const response = await axios.post(
@@ -19,7 +18,6 @@ const addToHistoryHandler = (element, videoId, historyDispatch) => {
 				},
 				HEADERS
 			);
-			console.log(response);
 			historyDispatch({
 				type: "ADD_ITEM",
 				payload: {
@@ -43,14 +41,15 @@ const addToHistoryHandler = (element, videoId, historyDispatch) => {
  * @param {string} token encodedToken of user
  * @param {function} historyDispatch Reducer function
  */
-const removeFromHistoryHandler = (element, videoId, historyDispatch) => {
-	element.preventDefault();
+const removeFromHistoryHandler = (e, videoId, historyDispatch) => {
+	e.preventDefault();
 	(async () => {
 		try {
 			const response = await axios.delete(
 				`/api/user/history/${videoId}`,
 				HEADERS
 			);
+			console.log(response);
 			historyDispatch({
 				type: "REMOVE_ITEM",
 				payload: {
@@ -65,22 +64,21 @@ const removeFromHistoryHandler = (element, videoId, historyDispatch) => {
 };
 
 /**
- * Remove data from history
+ * Remove data fre.preventDefault();om history
  * @param element
  * @param {string} videoId videoId to remove from history
  * @param {string} token encodedToken of user
  * @param {function} historyDispatch Reducer function
  */
-const removeAllFromHistoryHandler = (element, videoId, historyDispatch) => {
-	element.preventDefault();
+const removeAllFromHistoryHandler = (e, historyDispatch) => {
 	(async () => {
 		try {
 			const response = await axios.delete(`/api/user/history/all`, HEADERS);
 			historyDispatch({
 				type: "REMOVE_ALL",
 				payload: {
-					historyItemsCount: response.data.history.length,
-					itemsInHistory: videoId,
+					historyItemsCount: 0,
+					itemsInHistory: [],
 				},
 			});
 		} catch (error) {

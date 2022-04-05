@@ -1,5 +1,10 @@
-import { createContext, useContext, useEffect } from "react";
-import { useReducer } from "react";
+import {
+	createContext,
+	useContext,
+	useEffect,
+	useState,
+	useReducer,
+} from "react";
 import { historyReducer } from "../reducers";
 import { getHistoryDataHandler } from "../utils";
 
@@ -15,12 +20,15 @@ const HistoryProvider = ({ children }) => {
 		historyReducer,
 		defaultHistoryState
 	);
+	const [pauseHistory, setPauseHistory] = useState(false);
 	useEffect(() => getHistoryDataHandler(historyDispatch), []);
 	return (
 		<HistoryContext.Provider
 			value={{
 				historyState,
 				historyDispatch,
+				pauseHistory,
+				setPauseHistory,
 			}}
 		>
 			{children}
