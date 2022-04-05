@@ -1,8 +1,11 @@
-import { useVideos, useAuth } from "../../context";
+import { useVideos, useAuth, useHistory } from "../../context";
 import { Link } from "react-router-dom";
+import { addToHistoryHandler } from "../../utils";
 const VideoCard = () => {
 	const { videosData } = useVideos();
-
+	const { historyDispatch } = useHistory();
+	const handleAddToHistory = (e, videoId) =>
+		addToHistoryHandler(e, videoId, historyDispatch);
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
 			{videosData.length !== 0 ? (
@@ -24,6 +27,7 @@ const VideoCard = () => {
 							<Link
 								to={`videos/${_id}`}
 								className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2"
+								onClick={(e) => handleAddToHistory(e, _id)}
 							>
 								<img
 									src={thumbnailURL}
