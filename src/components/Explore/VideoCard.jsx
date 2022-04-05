@@ -76,7 +76,7 @@ const VideoCard = () => {
 								</section>
 							</section>
 							<section className="video-btn-container flex-row justify-content-center flex-wrap">
-								{authState.token !== null ? (
+								{authState.token.length ? (
 									<AddToPlaylistBtn btnType="add" videoId={_id} />
 								) : (
 									<AddToPlaylistBtn btnType="redirect" />
