@@ -1,3 +1,4 @@
+export { CategoryVideos, VideosCompose } from "./filters";
 export {
 	loginHandler,
 	registerHandler,

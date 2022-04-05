@@ -19,3 +19,173 @@
 .horizontal-tabs-content {
 	display: block;
 }
+
+.navbar-rp-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar-rp-section > * {
+	padding: 0.4rem;
+}
+
+.grid-container .nav {
+	width: 12rem;
+	grid-column: 1/2;
+}
+
+.grid-container .main {
+	grid-column: 2/13;
+}
+
+/* Video Card */
+.video-card {
+	width: 42.2rem;
+	height: auto;
+}
+
+.video-card-image-container {
+	width: 40rem;
+	height: 22.5rem;
+}
+
+.video-card-image {
+	width: 100%;
+	height: auto;
+}
+
+.fa-circle {
+	font-size: 0.5rem;
+}
+
+.video-btn-container {
+	display: none;
+}
+
+.video-card:hover .video-btn-container {
+	display: flex;
+}
+
+.video-filters {
+	background-color: var(--secondary-background-color);
+	font-size: 1.4rem;
+}
+
+/* Playlist Card */
+.playlist-basic-card{
+	width: 20rem;
+	height: 15rem;
+}
+.nav > * {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.nav .fas,
+.nav .fa-solid {
+	font-size: 1.5rem;
+}
+
+.filter-chip-selected {
+	color: var(--cta-color);
+	background-color: var(--tertiary-color);
+}
+
+@media screen and (max-width: 870px) {
+	.navbar-rp-section {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.navbar-rp-section > * {
+		padding: 0.5rem;
+	}
+
+	.grid-container .nav {
+		width: 20rem;
+	}
+	.grid-container .main {
+    grid-column: 1/13;
+	}
+}
+
+.modal {
+	position: absolute;
+	top: 0;
+	right:0;
+	height: 100%;	
+	width:100%;
+	z-index: 9;
+}
+.modal-background {
+	position: absolute;
+	top: 0;
+	right:0;
+	height: 100%;	
+	width:100%;
+	background-color: var(--tertiary-color);
+	opacity: 0.5;
+}
+.modal-content {
+	position: absolute;
+}
+
+.rui-alert--container {
+	top: 1;
+	right: 1;
+	bottom: null;
+	left: null;
+	z-index: 10;
+}
+
+.playlist-modal-container {
+	width: 38rem;
+	height: auto;
+	font-size: 2rem;
+}
+
+.playlist-modal-container .input-container {
+	width: 100%;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.list-card {
+	height: 15rem;
+}
+.cart-content .horizontal {
+	height: 17rem;
+}
+.list-card .horizontal-card-img {
+	height: 12.7rem;
+	width: 22rem;
+}
+
+.list-card .horizontal-card-img--container {
+	height: max-content;
+	width: max-content;
+}
+
+.list-card .horizontal-card-text--container {
+	height: 20rem;
+}
+
+.list-card > * {
+	font-size: 1.5rem;
+}
+
+.details-card-img {
+	width: 35rem;
+	height: auto;
+}
+
+.details-card {
+	width: 37rem;
+	height: auto;
+}
