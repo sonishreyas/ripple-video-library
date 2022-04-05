@@ -1,6 +1,5 @@
 import axios from "axios";
 import { formatDateTime } from "./date";
-import { HEADERS } from "./headers";
 /**
  * Add video data to history
  * @param {*} element
@@ -16,7 +15,12 @@ const addToHistoryHandler = (videoId, historyDispatch) => {
 				{
 					videoId: videoId,
 				},
-				HEADERS
+				{
+					headers: {
+						Accept: "*/*",
+						authorization: JSON.parse(localStorage.getItem("user"))?.token,
+					},
+				}
 			);
 			historyDispatch({
 				type: "ADD_ITEM",
@@ -45,10 +49,12 @@ const removeFromHistoryHandler = (e, videoId, historyDispatch) => {
 	e.preventDefault();
 	(async () => {
 		try {
-			const response = await axios.delete(
-				`/api/user/history/${videoId}`,
-				HEADERS
-			);
+			const response = await axios.delete(`/api/user/history/${videoId}`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			console.log(response);
 			historyDispatch({
 				type: "REMOVE_ITEM",
@@ -73,7 +79,12 @@ const removeFromHistoryHandler = (e, videoId, historyDispatch) => {
 const removeAllFromHistoryHandler = (e, historyDispatch) => {
 	(async () => {
 		try {
-			const response = await axios.delete(`/api/user/history/all`, HEADERS);
+			const response = await axios.delete(`/api/user/history/all`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			historyDispatch({
 				type: "REMOVE_ALL",
 				payload: {
@@ -96,7 +107,12 @@ const removeAllFromHistoryHandler = (e, historyDispatch) => {
 const getHistoryDataHandler = (historyDispatch) => {
 	(async () => {
 		try {
-			const response = await axios.get(`/api/user/history`, HEADERS);
+			const response = await axios.get(`/api/user/history`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			historyDispatch({
 				type: "GET_ITEM",
 				payload: {

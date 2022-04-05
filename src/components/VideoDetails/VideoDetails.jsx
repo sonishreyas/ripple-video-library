@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useVideos, useHistory } from "../../context";
+import { useVideos, useHistory, useAuth } from "../../context";
 import {
 	presentInArray,
 	removeFromHistoryHandler,
@@ -8,9 +8,11 @@ import {
 import { useEffect } from "react";
 const VideoDetails = () => {
 	const { videoId } = useParams();
+	const { authState } = useAuth();
 	const { pauseHistory, historyState, historyDispatch } = useHistory();
 	useEffect(() => {
-		if (!pauseHistory) {
+		console.log("executed", authState);
+		if (!pauseHistory && authState.token.length) {
 			if (presentInArray(historyState.itemsInHistory, videoId)) {
 				removeFromHistoryHandler(videoId, historyDispatch);
 				addToHistoryHandler(videoId, historyDispatch);
