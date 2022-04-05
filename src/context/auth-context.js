@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
 			authDispatch({
 				type: "UPDATE_USER",
 				payload: !JSON.parse(localStorage.getItem("user"))
-					? []
+					? {}
 					: JSON.parse(localStorage.getItem("user")),
 			}),
 		[]
