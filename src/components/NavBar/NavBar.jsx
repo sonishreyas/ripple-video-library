@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context";
 const NavBar = () => {
 	const { authState } = useAuth();
@@ -53,10 +53,10 @@ const NavBar = () => {
 							</span>
 						</NavLink>
 					) : (
-						<NavLink
+						<Link
 							to={"/auth"}
 							state={{ state: "/watchlater" }}
-							className={getActiveClass}
+							className="rui-drawer-links navbar-rp-section"
 						>
 							<span>
 								<i className="fa-solid fa-clock"></i>
@@ -64,7 +64,7 @@ const NavBar = () => {
 							<span className="rui-drawer-content--text p-2 text-center">
 								Watch Later
 							</span>
-						</NavLink>
+						</Link>
 					)}
 				</li>
 				<li className="rui-drawer-content m-10">
@@ -78,10 +78,10 @@ const NavBar = () => {
 							</span>
 						</NavLink>
 					) : (
-						<NavLink
+						<Link
 							to={"/auth"}
 							state={{ state: "/liked" }}
-							className={getActiveClass}
+							className="rui-drawer-links navbar-rp-section"
 						>
 							<span>
 								<i className="fa-solid fa-thumbs-up"></i>
@@ -89,7 +89,7 @@ const NavBar = () => {
 							<span className="rui-drawer-content--text p-2 text-center">
 								Liked
 							</span>
-						</NavLink>
+						</Link>
 					)}
 				</li>
 				<li className="rui-drawer-content m-10">
@@ -103,10 +103,10 @@ const NavBar = () => {
 							</span>
 						</NavLink>
 					) : (
-						<NavLink
+						<Link
 							to={"/auth"}
 							state={{ state: "/playlist" }}
-							className={getActiveClass}
+							className="rui-drawer-links navbar-rp-section"
 						>
 							<span>
 								<i className="fas fa-folder-plus"></i>
@@ -114,7 +114,7 @@ const NavBar = () => {
 							<span className="rui-drawer-content--text p-2 text-center">
 								Playlist
 							</span>
-						</NavLink>
+						</Link>
 					)}
 				</li>
 				<li className="rui-drawer-content m-10">
@@ -128,10 +128,10 @@ const NavBar = () => {
 							</span>
 						</NavLink>
 					) : (
-						<NavLink
+						<Link
 							to={"/auth"}
 							state={{ state: "/history" }}
-							className={getActiveClass}
+							className="rui-drawer-links navbar-rp-section"
 						>
 							<span>
 								<i className="fa-solid fa-clock-rotate-left"></i>
@@ -139,7 +139,7 @@ const NavBar = () => {
 							<span className="rui-drawer-content--text p-2 text-center">
 								Watch History
 							</span>
-						</NavLink>
+						</Link>
 					)}
 				</li>
 			</ul>
