@@ -1,7 +1,7 @@
 const HEADERS = {
 	headers: {
 		Accept: "*/*",
-		authorization: JSON.parse(localStorage.getItem("user")).token,
+		authorization: JSON.parse(localStorage.getItem("user"))?.token,
 	},
 };
 
