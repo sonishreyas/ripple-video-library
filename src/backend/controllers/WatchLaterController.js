@@ -45,7 +45,7 @@ export const addItemToWatchLaterVideos = function (schema, request) {
 	const user = requiresAuth.call(this, request);
 	if (user) {
 		const { videoId } = JSON.parse(request.requestBody);
-		if (user.watchlater.some((item) => item.videoId === videoId)) {
+		if (user.watchlater.some((item) => item._id === videoId)) {
 			return new Response(
 				409,
 				{},
@@ -54,7 +54,7 @@ export const addItemToWatchLaterVideos = function (schema, request) {
 				}
 			);
 		}
-		user.watchlater.push({ videoId: videoId, updatedAt: formatDate() });
+		user.watchlater.push({ _id: videoId, updatedAt: formatDate() });
 		return new Response(201, {}, { watchlater: user.watchlater });
 	}
 	return new Response(

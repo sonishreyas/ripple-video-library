@@ -1,11 +1,6 @@
 import axios from "axios";
 import { formatDateTime } from "./date";
-const HEADERS = {
-	headers: {
-		Accept: "*/*",
-		authorization: localStorage.getItem("token"),
-	},
-};
+import { HEADERS } from "./headers";
 /**
  * Add video data to watchlater
  * @param {*} element
@@ -24,12 +19,13 @@ const addToWatchlaterHandler = (element, videoId, watchlaterDispatch) => {
 				},
 				HEADERS
 			);
+
 			watchlaterDispatch({
 				type: "ADD_ITEM",
 				payload: {
 					watchlaterItemsCount: response.data.watchlater.length,
 					itemsInWatchlater: {
-						videoId: videoId,
+						_id: videoId,
 						updatedAt: formatDateTime(),
 					},
 				},
@@ -55,6 +51,7 @@ const removeFromWatchlaterHandler = (element, videoId, watchlaterDispatch) => {
 				`/api/user/watchlater/${videoId}`,
 				HEADERS
 			);
+			console.log(response);
 			watchlaterDispatch({
 				type: "REMOVE_ITEM",
 				payload: {

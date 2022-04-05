@@ -1,6 +1,6 @@
 import { useVideos, useWatchlater, useAuth } from "../../context";
 import { Link } from "react-router-dom";
-import { presentInArray } from "../../utils";
+import { presentInWatchLater } from "../../utils";
 import { WatchLaterButton } from ".";
 
 const VideoCard = () => {
@@ -82,8 +82,11 @@ const VideoCard = () => {
 									</span>
 									<p>Add to Playlist</p>
 								</button>
-								{authState.token !== null ? (
-									presentInArray(watchlaterState.itemsInWatchlater, _id) ? (
+								{authState.token.length ? (
+									presentInWatchLater(
+										watchlaterState.itemsInWatchlater,
+										_id
+									) ? (
 										<WatchLaterButton btnType="remove" videoId={_id} />
 									) : (
 										<WatchLaterButton btnType="add" videoId={_id} />

@@ -5,7 +5,7 @@
  * @returns Array with element removed
  */
 const removeFromArray = (arr, element) =>
-	arr.filter((item) => item.videoId !== element);
+	arr.filter((item) => item._id !== element);
 
 /**
  * Removed element from array
@@ -15,6 +15,15 @@ const removeFromArray = (arr, element) =>
  */
 const removeObjFromArray = (arr, element) =>
 	arr.filter((item) => item.addressId !== element);
+
+/**
+ * Check if its present in the array
+ * @param {Array} arr
+ * @param {any} element Element that needs to be searched from arr
+ * @returns true if element is found else false
+ */
+const presentInWatchLater = (arr, element) =>
+	arr?.find((item) => item._id === element) !== undefined ? true : false;
 
 /**
  * Check if its present in the array
@@ -74,8 +83,8 @@ const updateAddressObjInArray = (arr, element) =>
 	);
 
 const getDataFromId = (items, data) =>
-	items.map(({ videoId, updatedAt }) => ({
-		...data.find((item) => item._id === videoId),
+	items.map(({ _id, updatedAt }) => ({
+		...data.find((item) => item._id === _id),
 		updatedAt,
 	}));
 
@@ -92,6 +101,7 @@ const getVideosFromPlaylist = (items, data) =>
 
 export {
 	removeFromArray,
+	presentInWatchLater,
 	presentInArray,
 	presentObjInArray,
 	removeObjFromArray,
