@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context";
-const NavBar = (props) => {
+const NavBar = () => {
 	const { authState } = useAuth();
+	const getActiveClass = ({ isActive }) =>
+		isActive
+			? "text-cta-color rui-drawer-links navbar-rp-section"
+			: "rui-drawer-links navbar-rp-section";
 	return (
 		<nav className="nav nav-shadow navbar-rp">
 			<ul className="rui-drawer-content--list no-list">
@@ -19,183 +23,123 @@ const NavBar = (props) => {
 					</section>
 				</li>
 				<li className="rui-drawer-content m-10">
-					<Link to={"/"} className="rui-drawer-links">
-						<section
-							className={`navbar-rp-section ${
-								props.home ? "text-cta-color" : ""
-							}`}
-						>
-							<span>
-								<i className="fa-solid fa-house-chimney"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Home
-							</span>
-						</section>
-					</Link>
+					<NavLink to={"/"} className={getActiveClass}>
+						<span>
+							<i className="fa-solid fa-house-chimney"></i>
+						</span>
+						<span className="rui-drawer-content--text p-2 text-center">
+							Home
+						</span>
+					</NavLink>
 				</li>
 				<li className="rui-drawer-content m-10">
-					<Link to={"/explore"} className="rui-drawer-links">
-						<section
-							className={`navbar-rp-section ${
-								props.explore ? "text-cta-color" : ""
-							}`}
-						>
-							<span>
-								<i className="fa-solid fa-compass"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Explore
-							</span>
-						</section>
-					</Link>
+					<NavLink to={"/explore"} className={getActiveClass}>
+						<span>
+							<i className="fa-solid fa-compass"></i>
+						</span>
+						<span className="rui-drawer-content--text p-2 text-center">
+							Explore
+						</span>
+					</NavLink>
 				</li>
 				<li className="rui-drawer-content m-10">
-					{authState.token !== null ? (
-						<Link to={"/watchlater"} className="rui-drawer-links">
-							<section
-								className={`navbar-rp-section ${
-									props.watchlater ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fa-solid fa-clock"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Watch Later
-								</span>
-							</section>
-						</Link>
+					{authState.token.length ? (
+						<NavLink to={"/watchlater"} className={getActiveClass}>
+							<span>
+								<i className="fa-solid fa-clock"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Watch Later
+							</span>
+						</NavLink>
 					) : (
-						<Link
+						<NavLink
 							to={"/auth"}
 							state={{ state: "/watchlater" }}
-							className="rui-drawer-links"
+							className={getActiveClass}
 						>
-							<section
-								className={`navbar-rp-section ${
-									props.watchlater ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fa-solid fa-clock"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Watch Later
-								</span>
-							</section>
-						</Link>
+							<span>
+								<i className="fa-solid fa-clock"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Watch Later
+							</span>
+						</NavLink>
 					)}
 				</li>
 				<li className="rui-drawer-content m-10">
-					{authState.token !== null ? (
-						<Link to={"/liked"} className="rui-drawer-links">
-							<section
-								className={`navbar-rp-section ${
-									props.liked ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fa-solid fa-thumbs-up"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Liked
-								</span>
-							</section>
-						</Link>
+					{authState.token.length ? (
+						<NavLink to={"/liked"} className={getActiveClass}>
+							<span>
+								<i className="fa-solid fa-thumbs-up"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Liked
+							</span>
+						</NavLink>
 					) : (
-						<Link
+						<NavLink
 							to={"/auth"}
 							state={{ state: "/liked" }}
-							className="rui-drawer-links"
+							className={getActiveClass}
 						>
-							<section
-								className={`navbar-rp-section ${
-									props.liked ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fa-solid fa-thumbs-up"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Liked
-								</span>
-							</section>
-						</Link>
+							<span>
+								<i className="fa-solid fa-thumbs-up"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Liked
+							</span>
+						</NavLink>
 					)}
 				</li>
 				<li className="rui-drawer-content m-10">
-					{authState.token !== null ? (
-						<Link to={"/playlist"} className="rui-drawer-links">
-							<section
-								className={`navbar-rp-section ${
-									props.playlist ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fas fa-folder-plus"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Playlist
-								</span>
-							</section>
-						</Link>
+					{authState.token.length ? (
+						<NavLink to={"/playlist"} className={getActiveClass}>
+							<span>
+								<i className="fas fa-folder-plus"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Playlist
+							</span>
+						</NavLink>
 					) : (
-						<Link
+						<NavLink
 							to={"/auth"}
 							state={{ state: "/playlist" }}
-							className="rui-drawer-links"
+							className={getActiveClass}
 						>
-							<section
-								className={`navbar-rp-section ${
-									props.playlist ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fas fa-folder-plus"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Playlist
-								</span>
-							</section>
-						</Link>
+							<span>
+								<i className="fas fa-folder-plus"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Playlist
+							</span>
+						</NavLink>
 					)}
 				</li>
 				<li className="rui-drawer-content m-10">
-					{authState.token !== null ? (
-						<Link to={"/history"} className="rui-drawer-links">
-							<section
-								className={`navbar-rp-section ${
-									props.history ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fa-solid fa-clock-rotate-left"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Watch History
-								</span>
-							</section>
-						</Link>
+					{authState.token.length ? (
+						<NavLink to={"/history"} className={getActiveClass}>
+							<span>
+								<i className="fa-solid fa-clock-rotate-left"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Watch History
+							</span>
+						</NavLink>
 					) : (
-						<Link
+						<NavLink
 							to={"/auth"}
 							state={{ state: "/history" }}
-							className="rui-drawer-links"
+							className={getActiveClass}
 						>
-							<section
-								className={`navbar-rp-section ${
-									props.history ? "text-cta-color" : ""
-								}`}
-							>
-								<span>
-									<i className="fa-solid fa-clock-rotate-left"></i>
-								</span>
-								<span className="rui-drawer-content--text p-2 text-center">
-									Watch History
-								</span>
-							</section>
-						</Link>
+							<span>
+								<i className="fa-solid fa-clock-rotate-left"></i>
+							</span>
+							<span className="rui-drawer-content--text p-2 text-center">
+								Watch History
+							</span>
+						</NavLink>
 					)}
 				</li>
 			</ul>

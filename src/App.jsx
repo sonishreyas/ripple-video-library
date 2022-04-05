@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import {
 	Authentication,
 	Home,
@@ -28,6 +28,7 @@ function App() {
 				<Route path="/mock" element={<Mockman />} />
 			</Routes>
 			<NavBar />
+			<Outlet />
 			<Footer />
 		</div>
 	);
