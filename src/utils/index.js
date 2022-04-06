@@ -24,3 +24,8 @@ export {
 	getHistoryDataHandler,
 	removeAllFromHistoryHandler,
 } from "./history-management";
+export {
+	addToLikedHandler,
+	removeFromLikedHandler,
+	getLikedDataHandler,
+} from "./liked-management";

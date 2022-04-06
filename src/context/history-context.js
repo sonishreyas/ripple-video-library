@@ -7,7 +7,7 @@ import {
 } from "react";
 import { historyReducer } from "../reducers";
 import { getHistoryDataHandler } from "../utils";
-
+import { useAuth } from ".";
 const defaultHistoryState = {
 	historyItemsCount: 0,
 	itemsInHistory: [],
@@ -21,7 +21,11 @@ const HistoryProvider = ({ children }) => {
 		defaultHistoryState
 	);
 	const [pauseHistory, setPauseHistory] = useState(false);
-	useEffect(() => getHistoryDataHandler(historyDispatch), []);
+	const { authState } = useAuth();
+	useEffect(
+		() => authState.token?.length && getHistoryDataHandler(historyDispatch),
+		[authState]
+	);
 	return (
 		<HistoryContext.Provider
 			value={{

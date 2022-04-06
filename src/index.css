@@ -93,6 +93,12 @@
 	background-color: var(--tertiary-color);
 }
 
+.video-iframe {
+	width: 100rem;
+	height: 60rem;
+	border-radius: var(--br-4);
+}
+
 @media screen and (max-width: 870px) {
 	.navbar-rp-section {
 		display: flex;
