@@ -20,6 +20,11 @@ export {
 	getVideosFromPlaylist,
 } from "./helpers";
 export {
+	addToWatchlaterHandler,
+	removeFromWatchlaterHandler,
+	getWatchlaterDataHandler,
+} from "./watch-later-management";
+export {
 	addNewPlaylistHandler,
 	updatePlaylistHandler,
 	removePlaylistHandler,
