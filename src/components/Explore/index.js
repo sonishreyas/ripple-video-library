@@ -1,4 +1,7 @@
 export { ExploreContent } from "./ExploreContent";
 export { VideoCard } from "./VideoCard";
 export { Filters } from "./Filters";
-export { WatchLaterButton } from "./ExploreButtons";
+export { WatchLaterButton, AddToPlaylistBtn } from "./ExploreButtons";
+export { PlaylistModal } from "./PlaylistModal";
+export { AddPlaylistBtn } from "./AddPlaylistBtn";
+export { CreatePlaylist } from "./CreatePlaylist";

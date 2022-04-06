@@ -5,3 +5,4 @@ export { Header } from "./Header";
 export { Footer } from "./Footer";
 export { NavBar } from "./NavBar";
 export { WatchlaterContent } from "./Watchlater";
+export { PlaylistContent, PlaylistDetails } from "./Playlist";

@@ -32,6 +32,7 @@ import {
 import {
 	getAllPlaylistsHandler,
 	addNewPlaylistHandler,
+	updatePlaylistHandler,
 	removePlaylistHandler,
 	getVideosFromPlaylistHandler,
 	addVideoToPlaylistHandler,
@@ -105,6 +106,7 @@ export function makeServer({ environment = "development" } = {}) {
 			// playlist routes (private)
 			this.get("/user/playlists", getAllPlaylistsHandler.bind(this));
 			this.post("/user/playlists", addNewPlaylistHandler.bind(this));
+			this.put("/user/playlists/:playlistId", updatePlaylistHandler.bind(this));
 			this.delete(
 				"/user/playlists/:playlistId",
 				removePlaylistHandler.bind(this)

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { HEADERS } from "./headers";
 /**
  *
  * @param e Element
@@ -13,14 +12,12 @@ const loginHandler = (e, location, navigate, loginState, authDispatch) => {
 		try {
 			const response = await axios.post(`/api/auth/login`, loginInfo);
 			// saving the user data in the localStorage
-			console.log(response);
 			const user = {
 				token: response.data.encodedToken,
 				firstName: response.data.foundUser.firstName,
 				lastName: response.data.foundUser.lastName,
 				email: response.data.foundUser.email,
 			};
-			console.log(user);
 			authDispatch({
 				type: "UPDATE_USER",
 				payload: user,

@@ -24,3 +24,11 @@ export {
 	removeFromWatchlaterHandler,
 	getWatchlaterDataHandler,
 } from "./watch-later-management";
+export {
+	addNewPlaylistHandler,
+	updatePlaylistHandler,
+	removePlaylistHandler,
+	getPlaylistDataHandler,
+	addVideoToPlaylistHandler,
+	removeVideoFromPlaylistHandler,
+} from "./playlist-management";

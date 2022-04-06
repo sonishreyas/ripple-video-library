@@ -1,5 +1,4 @@
-const PlaylistPage = () => {
-    return (<h1>Playlist Page</h1>);
-}
+import { PlaylistContent } from "../components";
+const PlaylistPage = () => <PlaylistContent />;
 
-export {PlaylistPage};
+export { PlaylistPage };

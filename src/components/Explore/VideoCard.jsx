@@ -1,12 +1,13 @@
 import { useVideos, useWatchlater, useAuth } from "../../context";
 import { Link } from "react-router-dom";
-import { presentInWatchLater } from "../../utils";
-import { WatchLaterButton } from ".";
+import { AddToPlaylistBtn, WatchLaterButton } from ".";
+import { presentInArray, presentInWatchLater } from "../../utils";
 
 const VideoCard = () => {
 	const { videosData } = useVideos();
 	const { watchlaterState } = useWatchlater();
 	const { authState } = useAuth();
+
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
 			{videosData.length ? (
@@ -76,12 +77,11 @@ const VideoCard = () => {
 								</section>
 							</section>
 							<section className="video-btn-container flex-row justify-content-center flex-wrap">
-								<button className="cursor-pointer primary-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1">
-									<span className="wishlist-icon">
-										<i className="fas fa-folder-plus social"></i>
-									</span>
-									<p>Add to Playlist</p>
-								</button>
+								{authState.token.length ? (
+									<AddToPlaylistBtn btnType="add" videoId={_id} />
+								) : (
+									<AddToPlaylistBtn btnType="redirect" />
+								)}
 								{authState.token.length ? (
 									presentInWatchLater(
 										watchlaterState.itemsInWatchlater,

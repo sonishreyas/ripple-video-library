@@ -33,7 +33,7 @@ const VideoHorizontalCard = ({ itemCount, videos, handleDelete }) => {
 														src={channelProfileURL}
 														alt={channelName}
 														title={channelName}
-														className="avatar b-radius-circle l my-5"
+														className="avatar b-radius-circle m my-5"
 														aria-label="Channel profile picture"
 													/>
 												</section>
