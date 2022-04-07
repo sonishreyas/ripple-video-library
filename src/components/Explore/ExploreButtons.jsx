@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const WatchLaterButton = (props) => {
 	const { watchlaterDispatch } = useWatchlater();
-  return (
+	return (
 		<>
 			{props.btnType === "add" && (
 				<button
@@ -48,7 +48,8 @@ const WatchLaterButton = (props) => {
 				</Link>
 			)}
 		</>
-);
+	);
+};
 
 const AddToPlaylistBtn = (props) => {
 	const { setShowPlaylistModal, playlistDispatch } = usePlaylist();
