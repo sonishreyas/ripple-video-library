@@ -1,5 +1,4 @@
-const WatchHistoryPage = () => {
-    return (<h1>WatchHistory Page</h1>);
-}
+import { HistoryContent } from "../components";
+const WatchHistoryPage = () => <HistoryContent />;
 
-export {WatchHistoryPage};
+export { WatchHistoryPage };

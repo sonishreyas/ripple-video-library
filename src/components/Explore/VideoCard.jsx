@@ -1,12 +1,13 @@
-import { useVideos, useWatchlater, useAuth } from "../../context";
+import { useVideos, useAuth, useHistory, useWatchlater } from "../../context";
 import { Link } from "react-router-dom";
+import { addToHistoryHandler,presentInArray, presentInWatchLater } from "../../utils";
 import { AddToPlaylistBtn, WatchLaterButton } from ".";
-import { presentInArray, presentInWatchLater } from "../../utils";
 
 const VideoCard = () => {
 	const { videosData } = useVideos();
 	const { watchlaterState } = useWatchlater();
 	const { authState } = useAuth();
+  const { historyDispatch } = useHistory();
 
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
@@ -27,7 +28,7 @@ const VideoCard = () => {
 							key={_id}
 						>
 							<Link
-								to={`videos/${_id}`}
+								to={`/videos/${_id}`}
 								className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2"
 							>
 								<img

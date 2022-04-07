@@ -4,5 +4,7 @@ export { ExploreContent } from "./Explore";
 export { Header } from "./Header";
 export { Footer } from "./Footer";
 export { NavBar } from "./NavBar";
+export { HistoryContent } from "./History";
+export { VideoDetails } from "./VideoDetails";
 export { WatchlaterContent } from "./Watchlater";
 export { PlaylistContent, PlaylistDetails } from "./Playlist";

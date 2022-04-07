@@ -20,6 +20,12 @@ export {
 	getVideosFromPlaylist,
 } from "./helpers";
 export {
+	addToHistoryHandler,
+	removeFromHistoryHandler,
+	getHistoryDataHandler,
+	removeAllFromHistoryHandler,
+} from "./history-management";
+export {
 	addToWatchlaterHandler,
 	removeFromWatchlaterHandler,
 	getWatchlaterDataHandler,

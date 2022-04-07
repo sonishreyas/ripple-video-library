@@ -22,6 +22,7 @@ const removeObjFromArray = (arr, element) =>
  * @param {any} element Element that needs to be searched from arr
  * @returns true if element is found else false
  */
+
 const presentInWatchLater = (arr, element) =>
 	arr?.find((item) => item._id === element) !== undefined ? true : false;
 

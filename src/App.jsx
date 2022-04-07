@@ -9,6 +9,7 @@ import {
 	WatchLater,
 	Profile,
 	Explore,
+	VideosDetails,
 } from "./pages";
 import { PlaylistDetails, NavBar, Header, Footer } from "./components";
 import Mockman from "mockman-js";
@@ -19,6 +20,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/explore" element={<Explore />} />
+				<Route path="/videos/:videoId" element={<VideosDetails />} />
 				<Route path="/history" element={<WatchHistory />} />
 				<Route path="/playlist" element={<Playlist />} />
 				<Route path="/playlist/:playlistId" element={<PlaylistDetails />} />

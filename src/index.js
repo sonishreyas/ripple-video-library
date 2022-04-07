@@ -7,11 +7,13 @@ import {
 	LoginProvider,
 	AuthProvider,
 	VideosProvider,
+	HistoryProvider,
 	WatchlaterProvider,
 	PlaylistProvider,
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
+
 // Call make Server
 makeServer();
 
@@ -22,11 +24,13 @@ ReactDOM.render(
 				<LoginProvider>
 					<AuthProvider>
 						<VideosProvider>
-							<WatchlaterProvider>
-                <PlaylistProvider>
-								  <App />
-                </PlaylistProvider>
-              </WatchlaterProvider>
+							<HistoryProvider>
+							  <WatchlaterProvider>
+                  <PlaylistProvider>
+								    <App />
+                  </PlaylistProvider>
+                </WatchlaterProvider>
+              </HistoryProvider>
 						</VideosProvider>
 					</AuthProvider>
 				</LoginProvider>
