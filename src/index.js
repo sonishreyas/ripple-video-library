@@ -8,6 +8,8 @@ import {
 	AuthProvider,
 	VideosProvider,
 	HistoryProvider,
+	WatchlaterProvider,
+	PlaylistProvider,
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -23,8 +25,12 @@ ReactDOM.render(
 					<AuthProvider>
 						<VideosProvider>
 							<HistoryProvider>
-								<App />
-							</HistoryProvider>
+							  <WatchlaterProvider>
+                  <PlaylistProvider>
+								    <App />
+                  </PlaylistProvider>
+                </WatchlaterProvider>
+              </HistoryProvider>
 						</VideosProvider>
 					</AuthProvider>
 				</LoginProvider>
