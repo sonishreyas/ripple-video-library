@@ -11,7 +11,7 @@ import {
 	Explore,
 	VideosDetails,
 } from "./pages";
-import { NavBar, Header, Footer } from "./components";
+import { PlaylistDetails, NavBar, Header, Footer } from "./components";
 import Mockman from "mockman-js";
 function App() {
 	return (
@@ -23,6 +23,7 @@ function App() {
 				<Route path="/videos/:videoId" element={<VideosDetails />} />
 				<Route path="/history" element={<WatchHistory />} />
 				<Route path="/playlist" element={<Playlist />} />
+				<Route path="/playlist/:playlistId" element={<PlaylistDetails />} />
 				<Route path="/liked" element={<LikedVideos />} />
 				<Route path="/watchlater" element={<WatchLater />} />
 				<Route path="/auth" element={<Authentication />} />

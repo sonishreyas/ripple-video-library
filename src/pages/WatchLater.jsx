@@ -1,5 +1,5 @@
-const WatchLaterPage = () => {
-    return (<h1>WatchLater Page</h1>);
-}
+import { WatchlaterContent } from "../components";
 
-export {WatchLaterPage};
+const WatchLaterPage = () => <WatchlaterContent />;
+
+export { WatchLaterPage };
