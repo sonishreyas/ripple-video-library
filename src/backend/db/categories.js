@@ -18,4 +18,12 @@ export const categories = [
 		_id: uuid(),
 		categoryName: "Music",
 	},
+	{
+		_id: uuid(),
+		categoryName: "Investing",
+	},
+	{
+		_id: uuid(),
+		categoryName: "Standup",
+	},
 ];

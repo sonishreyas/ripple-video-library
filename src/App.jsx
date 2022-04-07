@@ -18,8 +18,7 @@ function App() {
 		<div className="grid-container">
 			<Header />
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/explore" element={<Explore />} />
+				<Route path="/" element={<Explore />} />
 				<Route path="/videos/:videoId" element={<VideosDetails />} />
 				<Route path="/history" element={<WatchHistory />} />
 				<Route path="/playlist" element={<Playlist />} />

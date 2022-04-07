@@ -33,16 +33,6 @@ const NavBar = () => {
 					</NavLink>
 				</li>
 				<li className="rui-drawer-content m-10">
-					<NavLink to={"/explore"} className={getActiveClass}>
-						<span>
-							<i className="fa-solid fa-compass"></i>
-						</span>
-						<span className="rui-drawer-content--text p-2 text-center">
-							Explore
-						</span>
-					</NavLink>
-				</li>
-				<li className="rui-drawer-content m-10">
 					{authState.token.length ? (
 						<NavLink to={"/watchlater"} className={getActiveClass}>
 							<span>
