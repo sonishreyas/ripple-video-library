@@ -1,5 +1,5 @@
-const ProfilePage = () => {
-    return (<h1>Profile Page</h1>);
-}
+import { ProfileContent } from "../components";
 
-export {ProfilePage};
+const ProfilePage = () => <ProfileContent />;
+
+export { ProfilePage };

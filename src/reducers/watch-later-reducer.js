@@ -26,6 +26,12 @@ const watchlaterReducer = (watchlaterState, { type, payload }) => {
 					payload.itemsInWatchlater
 				),
 			};
+		case "RESET":
+			return {
+				...watchlaterState,
+				watchlaterItemsCount: 0,
+				itemsInWatchlater: [],
+			};
 		default:
 			return watchlaterState;
 	}

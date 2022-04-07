@@ -17,7 +17,7 @@ const Header = () => {
 							alt="Logo of ripple UI"
 							className="brand-logo"
 						/>
-						<sub className="brand-name">Ripple Videos</sub>
+						<sub className="brand-name">Ripple Play</sub>
 					</Link>
 				</div>
 				<div className="social-icon-container flex-row align-center flex-gap-2">
@@ -41,7 +41,7 @@ const Header = () => {
 							{authState.token ? (
 								<Link
 									to={"/profile"}
-									className="no-link badge p-5 m-5 flex-column justify-content-center align-center"
+									className="no-link badge p-5 my-5 flex-column justify-content-center align-center"
 								>
 									<span className="badge-icon">
 										<i className="fas fa-user social"></i>
@@ -65,7 +65,7 @@ const Header = () => {
 								</Link>
 							)}
 						</li>
-						<li className="header-nav-icons h-auto pr-5">
+						<li className="header-nav-icons h-auto pr-2">
 							<span className="badge-icon">
 								<i
 									className={`fas fa-${themeIcon} theme-icon badge-icon`}

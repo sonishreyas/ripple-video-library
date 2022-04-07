@@ -12,6 +12,7 @@ import {
 	WatchlaterProvider,
 	PlaylistProvider,
 	ThemeProvider,
+	ProfileProvider,
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -31,7 +32,9 @@ ReactDOM.render(
 									<PlaylistProvider>
 										<LikedProvider>
 											<ThemeProvider>
-												<App />
+												<ProfileProvider>
+													<App />
+												</ProfileProvider>
 											</ThemeProvider>
 										</LikedProvider>
 									</PlaylistProvider>

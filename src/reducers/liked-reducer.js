@@ -23,7 +23,12 @@ const likedReducer = (likedState, { type, payload }) => {
 					payload.itemsInLiked
 				),
 			};
-
+		case "RESET":
+			return {
+				...likedState,
+				likedItemsCount: 0,
+				itemsInLiked: [],
+			};
 		default:
 			return likedState;
 	}
