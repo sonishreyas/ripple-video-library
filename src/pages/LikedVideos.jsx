@@ -1,5 +1,5 @@
-const LikedVideosPage = () => {
-    return (<h1>Liked Videos Page</h1>);
-}
+import { LikedContent } from "../components";
 
-export {LikedVideosPage};
+const LikedVideosPage = () => <LikedContent />;
+
+export { LikedVideosPage };

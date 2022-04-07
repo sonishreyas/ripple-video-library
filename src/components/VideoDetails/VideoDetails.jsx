@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useVideos, useHistory, useAuth, useLiked } from "../../context";
 import {
-	presentInArray,
 	removeFromHistoryHandler,
 	addToHistoryHandler,
 	getDataFromId,
@@ -14,11 +13,11 @@ const VideoDetails = () => {
 	const { authState } = useAuth();
 	const { videosData } = useVideos();
 	const { pauseHistory, historyState, historyDispatch } = useHistory();
-	const video = getDataFromId([{ videoId: videoId }], videosData)[0];
+	const video = getDataFromId([{ _id: videoId }], videosData)[0];
 	const { likedState } = useLiked();
 	useEffect(() => {
 		if (!pauseHistory && authState.token?.length) {
-			if (presentInArray(historyState.itemsInHistory, videoId)) {
+			if (presentObjInArray(historyState.itemsInHistory, videoId)) {
 				removeFromHistoryHandler(videoId, historyDispatch);
 				addToHistoryHandler(videoId, historyDispatch);
 			} else {
@@ -26,6 +25,7 @@ const VideoDetails = () => {
 			}
 		}
 	}, []);
+	console.log(likedState);
 	return (
 		<div className="flex-column">
 			<iframe
@@ -51,7 +51,7 @@ const VideoDetails = () => {
 							<LikeButton btnType="add" videoId={videoId} />
 						)
 					) : (
-						<LikeButton btnType="redirect" />
+						<LikeButton btnType="redirect" videoId={videoId} />
 					)}
 				</div>
 			</div>

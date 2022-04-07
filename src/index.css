@@ -99,6 +99,12 @@
 	border-radius: var(--br-4);
 }
 
+.outline-btn-active {
+	background: var(--primary-color);
+	border-color: var(--cta-color);
+	color: var(--cta-color);
+}
+
 @media screen and (max-width: 870px) {
 	.navbar-rp-section {
 		display: flex;

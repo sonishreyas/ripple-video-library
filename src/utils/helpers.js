@@ -5,7 +5,7 @@
  * @returns Array with element removed
  */
 const removeFromArray = (arr, element) =>
-	arr.filter((item) => item.videoId !== element);
+	arr.filter((item) => item._id !== element);
 
 /**
  * Removed element from array
@@ -74,8 +74,8 @@ const updateAddressObjInArray = (arr, element) =>
 	);
 
 const getDataFromId = (items, data) =>
-	items.map(({ videoId, updatedAt }) => ({
-		...data.find((item) => item._id === videoId),
+	items.map(({ _id, updatedAt }) => ({
+		...data.find((item) => item._id === _id),
 		updatedAt,
 	}));
 

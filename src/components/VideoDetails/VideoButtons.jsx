@@ -20,7 +20,7 @@ const LikeButton = ({ videoId, btnType }) => {
 			{btnType === "remove" && (
 				<button
 					onClick={(e) => removeFromLikedHandler(e, videoId, likedDispatch)}
-					className="cursor-pointer outline-btn p-5 b-radius-2 text-bold m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
+					className="cursor-pointer outline-btn p-5 b-radius-2 text-bold m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1 outline-btn-active"
 				>
 					<span className="wishlist-icon">
 						<i className="fa-solid fa-thumbs-up social"></i>

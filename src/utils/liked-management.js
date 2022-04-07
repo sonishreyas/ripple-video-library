@@ -23,13 +23,12 @@ const addToLikedHandler = (e, videoId, likedDispatch) => {
 					},
 				}
 			);
-			console.log(response);
 			likedDispatch({
 				type: "ADD_ITEM",
 				payload: {
 					likedItemsCount: response.data.likes.length,
 					itemsInLiked: {
-						videoId: videoId,
+						_id: videoId,
 						updatedAt: formatDateTime(),
 					},
 				},

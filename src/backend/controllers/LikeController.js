@@ -1,5 +1,5 @@
 import { Response } from "miragejs";
-import { requiresAuth } from "../utils/authUtils";
+import { formatDate, requiresAuth } from "../utils/authUtils";
 
 /**
  * All the routes related to Liked Videos are present here.

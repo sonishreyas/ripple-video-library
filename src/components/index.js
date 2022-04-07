@@ -6,3 +6,4 @@ export { Footer } from "./Footer";
 export { NavBar } from "./NavBar";
 export { HistoryContent } from "./History";
 export { VideoDetails } from "./VideoDetails";
+export { LikedContent } from "./Liked";
