@@ -56,11 +56,11 @@ const VideoDetails = () => {
 
 	return (
 		<main className="main">
-			<div className="flex-row flex-gap-half">
+			<div className="flex-row flex-gap-half single-page">
 				<div className="flex-column">
 					<div className="flex-row justify-content-start align-start">
 						<iframe
-							className="video-iframe"
+							className="video-iframe mx-5"
 							src={video.videoIframe}
 							title="YouTube video player"
 							frameBorder="0"
@@ -112,7 +112,7 @@ const VideoDetails = () => {
 				</div>
 				<div className="flex-row flex-gap-1">
 					<ul>
-						<li className="no-list form-heading text-bold py-5 px-5 mx-7">
+						<li className="no-list form-heading text-bold py-5 px-5">
 							Related Videos
 						</li>
 						{similarVideos.map((item) => (

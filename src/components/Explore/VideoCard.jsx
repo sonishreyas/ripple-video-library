@@ -1,10 +1,6 @@
 import { useVideos, useAuth, useHistory, useWatchlater } from "../../context";
 import { Link } from "react-router-dom";
-import {
-	addToHistoryHandler,
-	presentInArray,
-	presentInWatchLater,
-} from "../../utils";
+import { presentInWatchLater, getCountValue } from "../../utils";
 import { AddToPlaylistBtn, WatchLaterButton } from ".";
 
 const VideoCard = () => {
