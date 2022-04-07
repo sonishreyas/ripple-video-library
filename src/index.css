@@ -128,8 +128,15 @@
 	.single-page {
 		flex-wrap: wrap;
 	}
+	.video-card {
+		width: 100%;
+		height: auto;
+	}
+	.video-card-image-container {
+		width: 100%;
+		height: auto;
+	}
 }
-
 .modal {
 	position: absolute;
 	top: 0;
