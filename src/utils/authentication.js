@@ -1,5 +1,4 @@
 import axios from "axios";
-import { HEADERS } from "./headers";
 /**
  *
  * @param e Element

@@ -8,6 +8,7 @@ export {
 } from "./authentication";
 export {
 	removeFromArray,
+	presentInWatchLater,
 	presentInArray,
 	presentObjInArray,
 	removeObjFromArray,
@@ -30,3 +31,16 @@ export {
 	removeFromLikedHandler,
 	getLikedDataHandler,
 } from "./liked-management";
+export {
+	addToWatchlaterHandler,
+	removeFromWatchlaterHandler,
+	getWatchlaterDataHandler,
+} from "./watch-later-management";
+export {
+	addNewPlaylistHandler,
+	updatePlaylistHandler,
+	removePlaylistHandler,
+	getPlaylistDataHandler,
+	addVideoToPlaylistHandler,
+	removeVideoFromPlaylistHandler,
+} from "./playlist-management";

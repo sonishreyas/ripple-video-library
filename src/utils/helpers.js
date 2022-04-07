@@ -22,6 +22,16 @@ const removeObjFromArray = (arr, element) =>
  * @param {any} element Element that needs to be searched from arr
  * @returns true if element is found else false
  */
+
+const presentInWatchLater = (arr, element) =>
+	arr?.find((item) => item._id === element) !== undefined ? true : false;
+
+/**
+ * Check if its present in the array
+ * @param {Array} arr
+ * @param {any} element Element that needs to be searched from arr
+ * @returns true if element is found else false
+ */
 const presentInArray = (arr, element) =>
 	arr?.find((item) => item === element) !== undefined ? true : false;
 
@@ -98,6 +108,7 @@ const getCountValue = (value) =>
 		: value;
 export {
 	removeFromArray,
+	presentInWatchLater,
 	presentInArray,
 	presentObjInArray,
 	removeObjFromArray,

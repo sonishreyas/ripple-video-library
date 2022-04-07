@@ -9,6 +9,8 @@ import {
 	VideosProvider,
 	HistoryProvider,
 	LikedProvider,
+	WatchlaterProvider,
+	PlaylistProvider,
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -24,10 +26,14 @@ ReactDOM.render(
 					<AuthProvider>
 						<VideosProvider>
 							<HistoryProvider>
-								<LikedProvider>
-									<App />
-								</LikedProvider>
-							</HistoryProvider>
+							  <WatchlaterProvider>
+                  <PlaylistProvider>
+                    <LikedProvider>
+                      <App />
+                    </LikedProvider>
+                  </PlaylistProvider>
+                </WatchlaterProvider>
+              </HistoryProvider>
 						</VideosProvider>
 					</AuthProvider>
 				</LoginProvider>

@@ -7,3 +7,5 @@ export { NavBar } from "./NavBar";
 export { HistoryContent } from "./History";
 export { VideoDetails } from "./VideoDetails";
 export { LikedContent } from "./Liked";
+export { WatchlaterContent } from "./Watchlater";
+export { PlaylistContent, PlaylistDetails } from "./Playlist";
