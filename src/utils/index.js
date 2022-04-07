@@ -18,6 +18,7 @@ export {
 	checkIdPresentInArray,
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
+	getCountValue,
 } from "./helpers";
 export {
 	addToHistoryHandler,
@@ -25,6 +26,11 @@ export {
 	getHistoryDataHandler,
 	removeAllFromHistoryHandler,
 } from "./history-management";
+export {
+	addToLikedHandler,
+	removeFromLikedHandler,
+	getLikedDataHandler,
+} from "./liked-management";
 export {
 	addToWatchlaterHandler,
 	removeFromWatchlaterHandler,

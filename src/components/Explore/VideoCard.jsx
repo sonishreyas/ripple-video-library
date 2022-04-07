@@ -1,13 +1,13 @@
 import { useVideos, useAuth, useHistory, useWatchlater } from "../../context";
 import { Link } from "react-router-dom";
-import { addToHistoryHandler,presentInArray, presentInWatchLater } from "../../utils";
+import { presentInWatchLater, getCountValue } from "../../utils";
 import { AddToPlaylistBtn, WatchLaterButton } from ".";
 
 const VideoCard = () => {
 	const { videosData } = useVideos();
 	const { watchlaterState } = useWatchlater();
 	const { authState } = useAuth();
-  const { historyDispatch } = useHistory();
+	const { historyDispatch } = useHistory();
 
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
@@ -57,23 +57,9 @@ const VideoCard = () => {
 										)}
 									</p>
 									<span className="card-price-tag flex-row align-center flex-gap-half text-bold">
-										<p className="p-0 m-0">
-											{views > 1000
-												? views > 1000000
-													? views / 1000000 + "M"
-													: views / 1000 + "K"
-												: views}{" "}
-											views
-										</p>
+										<p className="p-0 m-0">{getCountValue(views)} views</p>
 										<i className="fa-solid fa-circle"></i>
-										<p className="p-0 m-0">
-											{likes > 1000
-												? likes > 1000000
-													? likes / 1000000 + "M"
-													: likes / 1000 + "K"
-												: likes}{" "}
-											likes
-										</p>
+										<p className="p-0 m-0">{getCountValue(likes)} likes</p>
 									</span>
 								</section>
 							</section>

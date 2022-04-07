@@ -93,6 +93,22 @@
 	background-color: var(--tertiary-color);
 }
 
+.video-iframe {
+	width: 100%;
+	height: 60rem;
+	border-radius: var(--br-3);
+}
+
+.outline-btn-active {
+	background: var(--primary-color);
+	border-color: var(--cta-color);
+	color: var(--cta-color);
+}
+@media screen and (max-width: 1180px) {
+	.grid-container .main {
+    grid-column: 1/13;
+	}
+}
 @media screen and (max-width: 870px) {
 	.navbar-rp-section {
 		display: flex;
@@ -108,8 +124,9 @@
 	.grid-container .nav {
 		width: 20rem;
 	}
-	.grid-container .main {
-    grid-column: 1/13;
+	
+	.single-page {
+		flex-wrap: wrap;
 	}
 }
 
