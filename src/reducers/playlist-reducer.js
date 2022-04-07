@@ -70,6 +70,13 @@ const playlistReducer = (playlistState, { type, payload }) => {
 				...playlistState,
 				playlists: [...payload.playlists],
 			};
+		case "RESET":
+			return {
+				...playlistState,
+				playlists: [],
+				newPlaylist: "",
+				selectedVideoId: "",
+			};
 		default:
 			return playlistState;
 	}

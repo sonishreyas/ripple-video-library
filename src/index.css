@@ -213,3 +213,11 @@
 	width: 37rem;
 	height: auto;
 }
+
+.vertical-tabs-content {
+	display: block;
+}
+
+.primary-btn {
+	color: var(--tertiary-color)
+}
