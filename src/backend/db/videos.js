@@ -31,7 +31,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/L3P3eE8Cy5M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAC6Gh-luz5HCXPDXFmHnmEuTvKng",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLSAAX9t_iv6FTNCV1r83YQC7gBJZNcQ0sKq9yZs3Q=s68-c-k-c0x00ffffff-no-rj",
-		videoIframe: "https://youtu.be/L3P3eE8Cy5M",
+		videoIframe: "https://www.youtube.com/embed/L3P3eE8Cy5M",
 		channelSubscribers: 896000,
 		verified: true,
 		views: 1000000,
@@ -50,7 +50,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/H9Ar0eiZt90/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-wITbmAPX2UbPycfdz2Kqdkbong",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLTW6l4zXdS367F-2snlFbDAlSfDVA3ATcg_GniG=s48-c-k-c0x00ffffff-no-rj",
-		videoIframe: "https://youtu.be/H9Ar0eiZt90",
+		videoIframe: "https://www.youtube.com/embed/H9Ar0eiZt90",
 		channelSubscribers: 891000,
 		verified: true,
 		views: 110000,
@@ -68,7 +68,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/Gcb41Y5AMaE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBs8i0pNwVFFqJxmhK3RbHB-0ZNrg",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLS9ZY0_i6W0chAV_y3cH7YY8a6gEMiV6Lq9z0IDEA=s176-c-k-c0x00ffffff-no-rj-mo",
-		videoIframe: "https://youtu.be/Gcb41Y5AMaE",
+		videoIframe: "https://www.youtube.com/embed/Gcb41Y5AMaE",
 		channelSubscribers: 227000,
 		verified: true,
 		views: 372349,
@@ -86,7 +86,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/KcbsZfoS7WQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvWa98cmUZFadoyb-dcC-fFjkgyw",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLTU5RwHp3wIL4vSPGjhvp1KL-2_QQB_8mhCwfTa=s48-c-k-c0x00ffffff-no-rj",
-		videoIframe: "https://youtu.be/KcbsZfoS7WQ",
+		videoIframe: "https://www.youtube.com/embed/KcbsZfoS7WQ",
 		channelSubscribers: 892000,
 		verified: true,
 		views: 33000,
@@ -100,11 +100,10 @@ export const videos = [
 		title: "Learn Stock Trading in 10 Hours! - #1",
 		channelName: "Honestly by Tanmay Bhat",
 		thumbnailURL:
-			"https://i.ytimg.com/vi/ef_9kFyhi0k/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCLLWCRiqD7XJAj6Uh0RQnsKjfogQ",
+			"https://i.ytimg.com/vi/ef_9kFyhi0k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALvO8xVJBqFY69eGoFPF9tdC2-lg",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLTU5RwHp3wIL4vSPGjhvp1KL-2_QQB_8mhCwfTa=s48-c-k-c0x00ffffff-no-rj",
-		videoIframe:
-			"https://youtu.be/ef_9kFyhi0k?list=PLhKwz7hYMTDVUXV-hkJ2wnwnQECzn-egm",
+		videoIframe: "https://www.youtube.com/embed/ef_9kFyhi0k",
 		channelSubscribers: 892000,
 		verified: true,
 		views: 39000,
@@ -122,7 +121,7 @@ export const videos = [
 			"https://i.ytimg.com/vi/wA0W6mFlKOM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdZa8QjIzBn8TCoraLpi08X1vJww",
 		channelProfileURL:
 			"https://yt3.ggpht.com/ytc/AKedOLTOKDVCFS70WhV3J5Y6_1QrLPs5PQrKuSHmmxvw=s48-c-k-c0x00ffffff-no-rj",
-		videoIframe: "https://youtu.be/2Oy4HpUJSgE",
+		videoIframe: "https://www.youtube.com/embed/2Oy4HpUJSgE",
 		channelSubscribers: 892000,
 		verified: true,
 		views: 39000,
