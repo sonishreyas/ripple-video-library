@@ -1,6 +1,5 @@
 import axios from "axios";
 import { formatDateTime } from "./date";
-import { HEADERS } from "./headers";
 /**
  * Add video data to playlist
  * @param {*} element
@@ -15,7 +14,12 @@ const addNewPlaylistHandler = (element, playlistName, playlistDispatch) => {
 			const response = await axios.post(
 				`/api/user/playlists`,
 				{ playlist: { name: playlistName } },
-				HEADERS
+				{
+					headers: {
+						Accept: "*/*",
+						authorization: JSON.parse(localStorage.getItem("user"))?.token,
+					},
+				}
 			);
 			playlistDispatch({
 				type: "ADD_NEW_PLAYLIST",
@@ -54,7 +58,12 @@ const updatePlaylistHandler = (
 			const response = await axios.put(
 				`/api/user/playlists/${playlistId}`,
 				{ playlist: { name: playlistName } },
-				HEADERS
+				{
+					headers: {
+						Accept: "*/*",
+						authorization: JSON.parse(localStorage.getItem("user"))?.token,
+					},
+				}
 			);
 			playlistDispatch({
 				type: "UPDAYE_PLAYLIST_NAME",
@@ -79,10 +88,12 @@ const removePlaylistHandler = (element, playlistId, playlistDispatch) => {
 	element.preventDefault();
 	(async () => {
 		try {
-			const response = await axios.delete(
-				`/api/user/playlists/${playlistId}`,
-				HEADERS
-			);
+			const response = await axios.delete(`/api/user/playlists/${playlistId}`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			playlistDispatch({
 				type: "REMOVE_PLAYLIST",
 				payload: {
@@ -104,7 +115,12 @@ const removePlaylistHandler = (element, playlistId, playlistDispatch) => {
 const getPlaylistDataHandler = (playlistDispatch) => {
 	(async () => {
 		try {
-			const response = await axios.get(`/api/user/playlists`, HEADERS);
+			const response = await axios.get(`/api/user/playlists`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			playlistDispatch({
 				type: "GET_PLAYLISTS",
 				payload: {
@@ -136,7 +152,12 @@ const addVideoToPlaylistHandler = (
 			const response = await axios.post(
 				`/api/user/playlists/${playlistId}`,
 				{ video: { _id: videoId } },
-				HEADERS
+				{
+					headers: {
+						Accept: "*/*",
+						authorization: JSON.parse(localStorage.getItem("user"))?.token,
+					},
+				}
 			);
 			playlistDispatch({
 				type: "ADD_NEW_VIDEO",
@@ -168,7 +189,12 @@ const removeVideoFromPlaylistHandler = (
 		try {
 			const response = await axios.delete(
 				`/api/user/playlists/${playlistId}/${videoId}`,
-				HEADERS
+				{
+					headers: {
+						Accept: "*/*",
+						authorization: JSON.parse(localStorage.getItem("user"))?.token,
+					},
+				}
 			);
 			playlistDispatch({
 				type: "REMOVE_VIDEO",

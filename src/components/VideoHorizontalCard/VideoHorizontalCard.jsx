@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const VideoHorizontalCard = ({ itemCount, videos, handleDelete }) => {
 	return (
 		<div className="flex-column align-center flex-gap-2">
@@ -16,14 +17,17 @@ const VideoHorizontalCard = ({ itemCount, videos, handleDelete }) => {
 						<li key={_id} className="no-list">
 							<article className="cursor-pointer card horizontal card-shadow p-5 b-radius-2 w-100 h-auto list-card mx-7">
 								<div className="flex-row p-1 b-radius-2 ">
-									<div className="horizontal-card-img--container flex-row justify-content-center align-center flex-wrap b-radius-2">
+									<Link
+										to={`/videos/${_id}`}
+										className="horizontal-card-img--container flex-row justify-content-center align-center flex-wrap b-radius-2"
+									>
 										<img
 											src={thumbnailURL}
 											alt={title}
 											title={title}
 											className="horizontal-card-img b-radius-2"
 										/>
-									</div>
+									</Link>
 									<div className="flex-row justify-content-space-between align-center">
 										<div className="horizontal-card-text--container flex-column flex-gap-1 p-2 b-radius-2 my-0 mx-5">
 											<h3 className="text-bold">{title}</h3>

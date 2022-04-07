@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useTheme } from "../../context";
 
 const Header = () => {
 	const { authState } = useAuth();
+	const { themeIcon, handleSetTheme } = useTheme();
 	return (
 		<header className="header header-shadow flex-column">
 			<div className="flex-row justify-content-space-between align-center w-100">
@@ -63,6 +64,15 @@ const Header = () => {
 									<p className="p-2 m-2">Login</p>
 								</Link>
 							)}
+						</li>
+						<li className="header-nav-icons h-auto pr-5">
+							<span className="badge-icon">
+								<i
+									className={`fas fa-${themeIcon} theme-icon badge-icon`}
+									aria-label="dark/light theme icon"
+									onClick={handleSetTheme}
+								></i>
+							</span>
 						</li>
 					</ul>
 				</div>

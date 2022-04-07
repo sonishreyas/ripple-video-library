@@ -1,4 +1,4 @@
-import { useVideos, useAuth, useHistory, useWatchlater } from "../../context";
+import { useVideos, useAuth, useWatchlater } from "../../context";
 import { Link } from "react-router-dom";
 import { presentInWatchLater, getCountValue } from "../../utils";
 import { AddToPlaylistBtn, WatchLaterButton } from ".";
@@ -7,7 +7,6 @@ const VideoCard = () => {
 	const { videosData } = useVideos();
 	const { watchlaterState } = useWatchlater();
 	const { authState } = useAuth();
-	const { historyDispatch } = useHistory();
 
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
