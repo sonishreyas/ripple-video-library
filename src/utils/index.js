@@ -17,6 +17,7 @@ export {
 	checkIdPresentInArray,
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
+	getCountValue,
 } from "./helpers";
 export {
 	addToHistoryHandler,

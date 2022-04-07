@@ -1,9 +1,8 @@
-import { useVideos, useAuth, useHistory } from "../../context";
+import { useVideos } from "../../context";
 import { Link } from "react-router-dom";
-import { addToHistoryHandler } from "../../utils";
+import { getCountValue } from "../../utils";
 const VideoCard = () => {
 	const { videosData } = useVideos();
-	const { historyDispatch } = useHistory();
 	return (
 		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
 			{videosData.length !== 0 ? (
@@ -52,23 +51,9 @@ const VideoCard = () => {
 										)}
 									</p>
 									<span className="card-price-tag flex-row align-center flex-gap-half text-bold">
-										<p className="p-0 m-0">
-											{views > 1000
-												? views > 1000000
-													? views / 1000000 + "M"
-													: views / 1000 + "K"
-												: views}{" "}
-											views
-										</p>
+										<p className="p-0 m-0">{getCountValue(views)} views</p>
 										<i className="fa-solid fa-circle"></i>
-										<p className="p-0 m-0">
-											{likes > 1000
-												? likes > 1000000
-													? likes / 1000000 + "M"
-													: likes / 1000 + "K"
-												: likes}{" "}
-											likes
-										</p>
+										<p className="p-0 m-0">{getCountValue(likes)} likes</p>
 									</span>
 								</section>
 							</section>

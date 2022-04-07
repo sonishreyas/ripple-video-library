@@ -90,6 +90,12 @@ const getVideosFromPlaylist = (items, data) =>
 		...data.find((item) => item._id === _id),
 	}));
 
+const getCountValue = (value) =>
+	value > 1000
+		? value > 1000000
+			? value / 1000000 + "M"
+			: value / 1000 + "K"
+		: value;
 export {
 	removeFromArray,
 	presentInArray,
@@ -101,4 +107,5 @@ export {
 	checkIdPresentInArray,
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
+	getCountValue,
 };
