@@ -1,6 +1,6 @@
 import { useVideos, useAuth, useWatchlater } from "../../context";
 import { Link } from "react-router-dom";
-import { presentInWatchLater, getCountValue } from "../../utils";
+import { presentInWatchLater, getCountValue, trimData } from "../../utils";
 import { AddToPlaylistBtn, WatchLaterButton } from ".";
 
 const VideoCard = () => {
@@ -48,7 +48,9 @@ const VideoCard = () => {
 									/>
 								</section>
 								<section className="card-content p-5 pb-0">
-									<h3 className="card-title text-wrap">{title}</h3>
+									<h3 className="card-title text-wrap" title={title}>
+										{trimData(title)}
+									</h3>
 									<p className="card-category py-5">
 										{channelName}{" "}
 										{verified && (

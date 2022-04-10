@@ -29,18 +29,6 @@ const VideoDetails = () => {
 			}
 		}
 	}, []);
-	const categoryFilterHandler = (name, videosData) =>
-		videosDispatch({
-			type: "FILTER_CATEGORY",
-			payload: {
-				categoryName: name,
-				categoryFilters: ((categoryFilters) => {
-					const newCategoryFilters = { ...categoryFilters };
-					newCategoryFilters[name] = true;
-					return newCategoryFilters;
-				})(videosState.categoryFilters),
-			},
-		});
 
 	const similarVideos = videosData.reduce(
 		(prevVideo, currVideo) =>

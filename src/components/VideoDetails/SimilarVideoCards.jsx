@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { trimData } from "../../utils";
 const SimilarVideosCards = ({ videoData }) => {
 	const {
 		_id,
@@ -11,7 +12,7 @@ const SimilarVideosCards = ({ videoData }) => {
 		thumbnailURL,
 	} = videoData;
 	return (
-		<li key={_id} className="no-list">
+		<li key={_id} className="no-list my-8">
 			<article className="cursor-pointer card horizontal card-shadow p-5 b-radius-2 w-100 h-auto list-card">
 				<div className="flex-row p-1 b-radius-2 ">
 					<Link
@@ -27,7 +28,9 @@ const SimilarVideosCards = ({ videoData }) => {
 					</Link>
 					<div className="flex-row align-center">
 						<div className="horizontal-card-text--container flex-column p-2 b-radius-2 my-0 mx-5">
-							<h4 className="text-bold">{title}</h4>
+							<h4 className="text-bold" title={title}>
+								{trimData(title)}
+							</h4>
 							<section className="flex-row justify-content-start align-start">
 								<section className="card-content pb-0">
 									<p className="card-category py-5">

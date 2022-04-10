@@ -19,6 +19,7 @@ export {
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
 	getCountValue,
+	trimData,
 } from "./helpers";
 export {
 	addToHistoryHandler,
