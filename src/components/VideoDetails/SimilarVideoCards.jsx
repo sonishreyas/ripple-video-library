@@ -28,9 +28,9 @@ const SimilarVideosCards = ({ videoData }) => {
 					</Link>
 					<div className="flex-row align-center">
 						<div className="horizontal-card-text--container flex-column p-2 b-radius-2 my-0 mx-5">
-							<h4 className="text-bold" title={title}>
+							<p className="text-bold" title={title}>
 								{trimData(title)}
-							</h4>
+							</p>
 							<section className="flex-row justify-content-start align-start">
 								<section className="card-content pb-0">
 									<p className="card-category py-5">

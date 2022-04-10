@@ -45,7 +45,7 @@ const VideoDetails = () => {
 	return (
 		<main className="main">
 			<div className="flex-row flex-gap-half single-page">
-				<div className="flex-column">
+				<div className="flex-column flex-grow-1">
 					<div className="flex-row justify-content-start align-start">
 						<iframe
 							className="video-iframe mx-5"

@@ -9,7 +9,7 @@ const VideoCard = () => {
 	const { authState } = useAuth();
 
 	return (
-		<div className="products-container flex-row align-center flex-gap-2 flex-wrap">
+		<div className="products-container flex-row align-start flex-gap-2 flex-wrap">
 			{videosData.length ? (
 				videosData.map(
 					({
@@ -23,12 +23,12 @@ const VideoCard = () => {
 						thumbnailURL,
 					}) => (
 						<article
-							className="cursor-pointer card video-card card-shadow p-5 b-radius-2"
+							className="cursor-pointer card video-card card-shadow b-radius-2"
 							key={_id}
 						>
 							<Link
 								to={`/videos/${_id}`}
-								className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2"
+								className="video-card-image-container card-image-container flex-row justify-content-center align-center flex-wrap b-radius-2 mx-5 mt-5"
 							>
 								<img
 									src={thumbnailURL}
@@ -37,7 +37,7 @@ const VideoCard = () => {
 									className="video-card-image b-radius-2"
 								/>
 							</Link>
-							<section className="flex-row justify-content-start align-start">
+							<section className="flex-row justify-content-start align-start mx-5 mt-3">
 								<section>
 									<img
 										src={channelProfileURL}
@@ -47,10 +47,13 @@ const VideoCard = () => {
 										aria-label="Channel profile picture"
 									/>
 								</section>
-								<section className="card-content p-5 pb-0">
-									<h3 className="card-title text-wrap" title={title}>
+								<section className="card-content p-5 pb-0 mx-5 mt-3">
+									<p
+										className="card-title text-wrap text-bold h5"
+										title={title}
+									>
 										{trimData(title)}
-									</h3>
+									</p>
 									<p className="card-category py-5">
 										{channelName}{" "}
 										{verified && (
@@ -64,7 +67,7 @@ const VideoCard = () => {
 									</span>
 								</section>
 							</section>
-							<section className="video-btn-container flex-row justify-content-center flex-wrap">
+							<section className="video-btn-container flex-row flex-wrap mx-5">
 								{authState.token.length ? (
 									<AddToPlaylistBtn btnType="add" videoId={_id} />
 								) : (
