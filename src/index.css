@@ -54,7 +54,7 @@
 }
 
 .video-card-image-container {
-	width: 28rem;
+	width: calc(100% - 2rem);
 	height: 15.5rem;
 }
 
@@ -251,8 +251,11 @@
 		height: auto;
 	}
 	.video-card-image-container {
-		width: 100%;
 		height: auto;
+	}
+	.video-card:hover {
+		border-bottom-left-radius: var(--br-2);
+		border-bottom-right-radius: var(--br-2);
 	}
 
 	.main {

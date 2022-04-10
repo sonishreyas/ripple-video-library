@@ -37,7 +37,7 @@ const VideoCard = () => {
 									className="video-card-image b-radius-2"
 								/>
 							</Link>
-							<section className="flex-row justify-content-start align-start mx-5 mt-3">
+							<section className="flex-row justify-content-start align-start mx-5 ">
 								<section>
 									<img
 										src={channelProfileURL}
@@ -47,7 +47,7 @@ const VideoCard = () => {
 										aria-label="Channel profile picture"
 									/>
 								</section>
-								<section className="card-content p-5 pb-0 mx-5 mt-3">
+								<section className="card-content p-5 pb-0 mx-5">
 									<p
 										className="card-title text-wrap text-bold h5"
 										title={title}
