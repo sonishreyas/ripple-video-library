@@ -22,6 +22,20 @@ export const videos = [
 		category: ["chess", "stream"],
 		description:
 			"Arena is a free community gaming website. You can discover new gaming communities OR create your own. It’s a play-to-earn platform, so the more games you play, the more chances you have to earn and win prizes. You can make our own club on Arena for your schools, colleges and offices and make your events super cool/professional.",
+		comments: [
+			{
+				_id: uuid(),
+				name: "Shreyas Soni",
+				initials: "SS",
+				comment: "What a finale!!!",
+			},
+			{
+				_id: uuid(),
+				name: "Test Test",
+				initials: "TT",
+				comment: "What a finale!!! Samay OP",
+			},
+		],
 	},
 	{
 		_id: uuid(),

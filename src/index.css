@@ -1,3 +1,8 @@
+
+.border-bottom {
+	border-bottom: 0.2rem solid var(--secondary-background-color);
+}
+
 .filters {
 	position: fixed;
 	opacity: 0;
@@ -14,6 +19,10 @@
 }
 .focused > .textbox-label {
 	background: var(--secondary-background-color);
+}
+
+.focused > .comment-label {
+	background-color: var(--primary-color);
 }
 
 .horizontal-tabs-content {

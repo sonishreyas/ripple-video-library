@@ -6,12 +6,11 @@ import {
 	getDataFromId,
 	presentObjInArray,
 	getCountValue,
-	CategoryVideos,
 	presentInArray,
 } from "../../utils";
 import { LikeButton } from "./VideoButtons";
-import { useEffect, useState } from "react";
-import { SimilarVideosCards } from "./SimilarVideoCards";
+import { useEffect } from "react";
+import { SimilarVideosCards, Comments } from ".";
 const VideoDetails = () => {
 	const { videoId } = useParams();
 	const { authState } = useAuth();
@@ -57,8 +56,9 @@ const VideoDetails = () => {
 						></iframe>
 					</div>
 					<h3 className="text-bold py-5 my-5">{video.title}</h3>
+					<div className="border-bottom"></div>
 					<div className="flex-row justify-content-space-between">
-						<div className="flex-column justify-content-center">
+						<div className="flex-column justify-content-center my-5">
 							<div className="flex-row justify-content-start align-center">
 								<div>
 									<img
@@ -97,6 +97,8 @@ const VideoDetails = () => {
 							)}
 						</div>
 					</div>
+					<div className="border-bottom"></div>
+					<Comments comments={video.comments} />
 				</div>
 				<div className="flex-row flex-gap-1">
 					<ul>

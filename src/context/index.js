@@ -8,3 +8,4 @@ export { WatchlaterProvider, useWatchlater } from "./watch-later-context";
 export { PlaylistProvider, usePlaylist } from "./playlist-context";
 export { ThemeProvider, useTheme } from "./theme-context";
 export { ProfileProvider, useProfile } from "./profile-context";
+export { CommentsProvider, useComments } from "./comments-context";
