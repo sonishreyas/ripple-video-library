@@ -1,4 +1,15 @@
 import axios from "axios";
+import { Navigate, useLocation } from "react-router-dom";
+
+const RequireAuth = ({ children }) => {
+	const location = useLocation();
+	return JSON.parse(localStorage.getItem("user"))?.token ? (
+		children
+	) : (
+		<Navigate to="/auth" state={{ from: location }} replace />
+	);
+};
+
 /**
  *
  * @param e Element
@@ -23,7 +34,7 @@ const loginHandler = (e, location, navigate, loginState, authDispatch) => {
 				payload: user,
 			});
 			localStorage.setItem("user", JSON.stringify(user));
-			navigate(location.state.state);
+			navigate(location?.state?.from?.pathname);
 		} catch (error) {
 			console.log(error);
 		}
@@ -65,7 +76,7 @@ const registerHandler = (
 				payload: JSON.stringify(user),
 			});
 			localStorage.setItem("user", user);
-			navigate(location.state.state);
+			navigate(location?.state?.from?.pathname);
 		} catch (error) {
 			console.log(error);
 		}
@@ -89,6 +100,7 @@ const setFocusHandler = (field, value, type, loginDispatch, focusReset) => {
 	loginDispatch({ payload: { focus: focusReset }, type: type });
 };
 export {
+	RequireAuth,
 	loginHandler,
 	registerHandler,
 	setValueHandler,

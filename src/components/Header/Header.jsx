@@ -38,32 +38,25 @@ const Header = () => {
 							</form>
 						</li>
 						<li className="header-nav-icons h-auto pt-10">
-							{authState.token ? (
+							{
 								<Link
 									to={"/profile"}
-									className="no-link badge p-5 my-5 flex-column justify-content-center align-center"
-								>
-									<span className="badge-icon">
-										<i className="fas fa-user social"></i>
-									</span>
-									<p className="p-2 m-2">
-										Hi,{" "}
-										{authState.firstName.charAt(0).toUpperCase() +
-											authState.firstName.slice(1).toLowerCase()}
-									</p>
-								</Link>
-							) : (
-								<Link
-									to={"/auth"}
-									state={{ state: "/profile" }}
 									className="no-link badge p-5 m-5 flex-column justify-content-center align-center"
 								>
 									<span className="badge-icon">
 										<i className="fas fa-user social"></i>
 									</span>
-									<p className="p-2 m-2">Login</p>
+									<p className="p-2 m-2">
+										{authState?.token?.length
+											? `Hi,
+										${
+											authState.firstName.charAt(0).toUpperCase() +
+											authState.firstName.slice(1).toLowerCase()
+										}`
+											: "Login"}
+									</p>
 								</Link>
-							)}
+							}
 						</li>
 						<li className="header-nav-icons h-auto pr-2">
 							<span className="badge-icon">

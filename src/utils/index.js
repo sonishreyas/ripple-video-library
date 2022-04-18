@@ -1,5 +1,6 @@
 export { CategoryVideos, VideosCompose } from "./filters";
 export {
+	RequireAuth,
 	loginHandler,
 	registerHandler,
 	setValueHandler,
