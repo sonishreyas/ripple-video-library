@@ -4,7 +4,8 @@ import { useState } from "react";
 const Comments = ({ comments }) => {
 	const { authState } = useAuth();
 	const initial =
-		authState.firstName[0].toUpperCase() + authState.lastName[0].toUpperCase();
+		authState?.firstName[0]?.toUpperCase() +
+		authState?.lastName[0]?.toUpperCase();
 	const [showButtons, setShowButton] = useState(false);
 	const [focus, setFocus] = useState(false);
 	const [newComment, setNewComment] = useState("");
@@ -12,7 +13,7 @@ const Comments = ({ comments }) => {
 	const handleFocus = () => {
 		if (focus) {
 			setFocus(false);
-			!newComment.length && setShowButton(false);
+			!newComment?.length && setShowButton(false);
 		} else {
 			setFocus(true);
 			setShowButton(true);
@@ -22,57 +23,59 @@ const Comments = ({ comments }) => {
 	return (
 		<ul>
 			<li className="no-list form-heading text-bold py-5">Comments</li>
-			<li className="no-list">
-				<div className="flex-row justify-content-start align-center">
-					<div>
-						<p className="avatar b-radius-circle avatar-text flex-row justify-content-center align-center m text-bold">
-							{initial}
-						</p>
-					</div>
-
-					<div className="card-content w-100">
-						<div
-							className={`input-container flex-column m-5 w-100 h-auto ${
-								focus || newComment.length ? "focused" : ""
-							}`}
-							key="new-comment-input"
-						>
-							<input
-								id="new-comment"
-								className="textbox-content p-5"
-								type="text"
-								name="newComments"
-								onChange={handleValueChange}
-								value={newComment}
-								onFocus={handleFocus}
-								onBlur={handleFocus}
-							/>
-							<label
-								htmlFor="newComments"
-								className="textbox-label comment-label m-0 px-1"
-							>
-								Add a comment
-							</label>
+			{authState.token && (
+				<li className="no-list">
+					<div className="flex-row justify-content-start align-center">
+						<div>
+							<p className="avatar b-radius-circle avatar-text flex-row justify-content-center align-center m text-bold">
+								{initial}
+							</p>
 						</div>
-						{showButtons && (
-							<div className="flex-row justify-content-end flex-gap-1">
-								<button
-									className="cursor-pointer outline-btn p-2 b-radius-2     text-bold"
-									type="button"
+
+						<div className="card-content w-100">
+							<div
+								className={`input-container flex-column m-5 w-100 h-auto ${
+									focus || newComment?.length ? "focused" : ""
+								}`}
+								key="new-comment-input"
+							>
+								<input
+									id="new-comment"
+									className="textbox-content p-5"
+									type="text"
+									name="newComments"
+									onChange={handleValueChange}
+									value={newComment}
+									onFocus={handleFocus}
+									onBlur={handleFocus}
+								/>
+								<label
+									htmlFor="newComments"
+									className="textbox-label comment-label m-0 px-1"
 								>
-									Cancel
-								</button>
-								<button
-									className="cursor-pointer primary-btn p-2 b-radius-2 text-bold"
-									type="button"
-								>
-									Comment
-								</button>
+									Add a comment
+								</label>
 							</div>
-						)}
+							{showButtons && (
+								<div className="flex-row justify-content-end flex-gap-1">
+									<button
+										className="cursor-pointer outline-btn p-2 b-radius-2     text-bold"
+										type="button"
+									>
+										Cancel
+									</button>
+									<button
+										className="cursor-pointer primary-btn p-2 b-radius-2 text-bold"
+										type="button"
+									>
+										Comment
+									</button>
+								</div>
+							)}
+						</div>
 					</div>
-				</div>
-			</li>
+				</li>
+			)}
 			{comments.length &&
 				comments.map(({ _id, name, initials, comment }) => (
 					<li className="no-list" key={_id}>
