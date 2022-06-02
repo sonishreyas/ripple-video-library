@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 const useInfiniteScroll = ({ lastElement, videos }) => {
 	const noOfPages = Math.ceil(videos?.length / 6);

@@ -16,6 +16,7 @@ import {
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ToastPortal } from "components";
 
 // Call make Server
 makeServer();
@@ -34,6 +35,7 @@ ReactDOM.render(
 											<ThemeProvider>
 												<ProfileProvider>
 													<App />
+													<ToastPortal />
 												</ProfileProvider>
 											</ThemeProvider>
 										</LikedProvider>

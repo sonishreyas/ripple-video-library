@@ -19,7 +19,28 @@ const Comments = ({ comments }) => {
 			setShowButton(true);
 		}
 	};
+
+	const handleDismissComment = () => {
+		setNewComment("");
+		setShowButton(false);
+	};
 	const handleValueChange = (e) => setNewComment(e.target.value);
+
+	const handleAddComment = (e) => {
+		dispatch(
+			addComment({
+				postId: postId,
+				updatedValue: {
+					comments: [
+						...comments,
+						{ userId: userProfile?.uid, comment: newComment },
+					],
+				},
+			})
+		);
+		setNewComment("");
+		setShowButton(false);
+	};
 	return (
 		<ul>
 			<li className="no-list form-heading text-bold py-5">Comments</li>
@@ -59,14 +80,16 @@ const Comments = ({ comments }) => {
 							{showButtons && (
 								<div className="flex-row justify-content-end flex-gap-1">
 									<button
-										className="cursor-pointer outline-btn p-2 b-radius-2     text-bold"
+										className="cursor-pointer outline-btn p-2 b-radius-2 text-bold"
 										type="button"
+										onClick={handleDismissComment}
 									>
 										Cancel
 									</button>
 									<button
 										className="cursor-pointer primary-btn p-2 b-radius-2 text-bold"
 										type="button"
+										onClick={handleAddComment}
 									>
 										Comment
 									</button>

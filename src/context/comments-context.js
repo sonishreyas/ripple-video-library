@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { commentsReducer } from "../reducers";
-const defaultcommentsState = {
+const defaultCommentsState = {
 	newComment: "",
 	comments: [],
 };
