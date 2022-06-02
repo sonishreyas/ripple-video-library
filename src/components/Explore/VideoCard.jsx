@@ -2,16 +2,23 @@ import { useVideos, useAuth, useWatchlater } from "../../context";
 import { Link } from "react-router-dom";
 import { presentInWatchLater, getCountValue, trimData } from "../../utils";
 import { AddToPlaylistBtn, WatchLaterButton } from ".";
-
+import { useRef } from "react";
+import { useInfiniteScroll } from "custom-hooks";
 const VideoCard = () => {
 	const { videosData } = useVideos();
 	const { watchlaterState } = useWatchlater();
 	const { authState } = useAuth();
+	const lastElement = useRef(null);
+	let { pageNum } = useInfiniteScroll({
+		lastElement: lastElement,
+		videos: videosData,
+	});
+	const videos = videosData.slice(0, pageNum * 6);
 
 	return (
 		<div className="products-container flex-row align-start flex-gap-2 flex-wrap">
-			{videosData.length ? (
-				videosData.map(
+			{videos.length ? (
+				videos.map(
 					({
 						_id,
 						title,
@@ -92,6 +99,7 @@ const VideoCard = () => {
 			) : (
 				<h1>Loading...</h1>
 			)}
+			<div ref={lastElement} />
 		</div>
 	);
 };
