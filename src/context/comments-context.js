@@ -5,7 +5,7 @@ const defaultCommentsState = {
 	comments: [],
 };
 
-const CommentsContext = createContext(defaultcommentsState);
+const CommentsContext = createContext(defaultCommentsState);
 
 const CommentsProvider = ({ children }) => {
 	const [commentsState, commentsDispatch] = useReducer(

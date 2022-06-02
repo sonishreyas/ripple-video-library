@@ -20,16 +20,56 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path="/" element={<Explore />} />
-				<Route path="/auth" element={<Authentication />} />
 				<Route path="/videos/:videoId" element={<VideosDetails />} />
-				<Route element={<RequireAuth />}>
-					<Route path="/history" element={<WatchHistory />} />
-					<Route path="/playlist" element={<Playlist />} />
-					<Route path="/playlist/:playlistId" element={<PlaylistDetails />} />
-					<Route path="/liked" element={<LikedVideos />} />
-					<Route path="/watchlater" element={<WatchLater />} />
-					<Route path="/profile" element={<Profile />} />
-				</Route>
+				<Route
+					path="/history"
+					element={
+						<RequireAuth>
+							<WatchHistory />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path="/playlist"
+					element={
+						<RequireAuth>
+							<Playlist />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path="/playlist/:playlistId"
+					element={
+						<RequireAuth>
+							<PlaylistDetails />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path="/liked"
+					element={
+						<RequireAuth>
+							<LikedVideos />
+						</RequireAuth>
+					}
+				/>
+				<Route
+					path="/watchlater"
+					element={
+						<RequireAuth>
+							<WatchLater />
+						</RequireAuth>
+					}
+				/>
+				<Route path="/auth" element={<Authentication />} />
+				<Route
+					path="/profile"
+					element={
+						<RequireAuth>
+							<Profile />
+						</RequireAuth>
+					}
+				/>
 				<Route path="/mock" element={<Mockman />} />
 			</Routes>
 			<NavBar />
