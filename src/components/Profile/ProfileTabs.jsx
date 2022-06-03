@@ -1,14 +1,14 @@
-import { useProfile } from "../../context";
-import { Profile, Address, Orders, Settings } from ".";
+import { useState } from "react";
+import { Profile, Settings } from ".";
 const ProfileTabs = () => {
-	const { profileActiveTab, setProfileActiveTab } = useProfile();
+	const [profileActiveTab, setProfileActiveTab] = useState("Profile");
 	const tabClickHandler = (activeTabName) => setProfileActiveTab(activeTabName);
 	return (
 		<section className="rui-main--heading-container no-border profile-tabs">
 			<article className="vertical-tabs-container flex-row flex-wrap flex-gap-1 b-radius-2 p-5 w-100 h-auto">
 				<article className="vertical-tabs-btn-container flex-column justify-content-start align-start p-0 my-5 mx-0">
 					<button
-						className={`tabs-btn p-5 flex-row flex-gap-1 align-center justify-content-start ${
+						className={`tabs-btn p-5 flex-row flex-gap-1 align-center justify-content-start cursor-pointer ${
 							profileActiveTab === "Profile" ? "vertical-tabs-btn-active" : ""
 						}`}
 						onClick={() => tabClickHandler("Profile")}
@@ -19,7 +19,7 @@ const ProfileTabs = () => {
 						<p className="tabs-btn-text">Profile</p>
 					</button>
 					<button
-						className={`tabs-btn p-5 flex-row flex-gap-1 align-center justify-content-start ${
+						className={`tabs-btn p-5 flex-row flex-gap-1 align-center justify-content-start cursor-pointer ${
 							profileActiveTab === "Settings" ? "vertical-tabs-btn-active" : ""
 						}`}
 						onClick={() => tabClickHandler("Settings")}

@@ -105,8 +105,8 @@ const VideoDetails = () => {
 						<li className="no-list form-heading text-bold py-5 px-5">
 							Related Videos
 						</li>
-						{similarVideos.map((item) => (
-							<SimilarVideosCards videoData={item} />
+						{similarVideos.map((item, index) => (
+							<SimilarVideosCards videoData={item} key={index} />
 						))}
 					</ul>
 				</div>

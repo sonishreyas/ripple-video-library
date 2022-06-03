@@ -62,7 +62,7 @@ const registerHandler = (
 			};
 			authDispatch({
 				type: "UPDATE_USER",
-				payload: JSON.stringify(user),
+				payload: user,
 			});
 			localStorage.setItem("user", JSON.stringify(user));
 			navigate(location.state.state);

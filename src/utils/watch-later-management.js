@@ -1,6 +1,5 @@
 import axios from "axios";
 import { formatDateTime } from "./date";
-import { HEADERS } from "./headers";
 /**
  * Add video data to watchlater
  * @param {*} element
@@ -17,7 +16,12 @@ const addToWatchlaterHandler = (element, videoId, watchlaterDispatch) => {
 				{
 					videoId: videoId,
 				},
-				HEADERS
+				{
+					headers: {
+						Accept: "*/*",
+						authorization: JSON.parse(localStorage.getItem("user"))?.token,
+					},
+				}
 			);
 
 			watchlaterDispatch({
@@ -47,10 +51,12 @@ const removeFromWatchlaterHandler = (element, videoId, watchlaterDispatch) => {
 	element.preventDefault();
 	(async () => {
 		try {
-			const response = await axios.delete(
-				`/api/user/watchlater/${videoId}`,
-				HEADERS
-			);
+			const response = await axios.delete(`/api/user/watchlater/${videoId}`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			console.log(response);
 			watchlaterDispatch({
 				type: "REMOVE_ITEM",
@@ -74,7 +80,12 @@ const removeFromWatchlaterHandler = (element, videoId, watchlaterDispatch) => {
 const getWatchlaterDataHandler = (watchlaterDispatch) => {
 	(async () => {
 		try {
-			const response = await axios.get(`/api/user/watchlater`, HEADERS);
+			const response = await axios.get(`/api/user/watchlater`, {
+				headers: {
+					Accept: "*/*",
+					authorization: JSON.parse(localStorage.getItem("user"))?.token,
+				},
+			});
 			watchlaterDispatch({
 				type: "GET_ITEM",
 				payload: {

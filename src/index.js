@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import {
-	RegisterProvider,
-	LoginProvider,
 	AuthProvider,
 	VideosProvider,
 	HistoryProvider,
@@ -24,28 +22,22 @@ makeServer();
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>
-			<RegisterProvider>
-				<LoginProvider>
-					<AuthProvider>
-						<VideosProvider>
-							<HistoryProvider>
-								<WatchlaterProvider>
-									<PlaylistProvider>
-										<LikedProvider>
-											<ThemeProvider>
-												<ProfileProvider>
-													<App />
-													<ToastPortal />
-												</ProfileProvider>
-											</ThemeProvider>
-										</LikedProvider>
-									</PlaylistProvider>
-								</WatchlaterProvider>
-							</HistoryProvider>
-						</VideosProvider>
-					</AuthProvider>
-				</LoginProvider>
-			</RegisterProvider>
+			<AuthProvider>
+				<VideosProvider>
+					<HistoryProvider>
+						<WatchlaterProvider>
+							<PlaylistProvider>
+								<LikedProvider>
+									<ThemeProvider>
+										<App />
+										<ToastPortal />
+									</ThemeProvider>
+								</LikedProvider>
+							</PlaylistProvider>
+						</WatchlaterProvider>
+					</HistoryProvider>
+				</VideosProvider>
+			</AuthProvider>
 		</Router>
 	</React.StrictMode>,
 	document.getElementById("root")
