@@ -1,7 +1,7 @@
-import { useVideos, useAuth, useWatchlater } from "../../context";
+import { useVideos, useAuth, useWatchlater } from "context";
 import { Link } from "react-router-dom";
-import { presentInWatchLater, getCountValue, trimData } from "../../utils";
-import { AddToPlaylistBtn, WatchLaterButton } from ".";
+import { presentInWatchLater, getCountValue, trimData } from "utils";
+import { AddToPlaylistBtn, LoadingCards, WatchLaterButton } from ".";
 import { useRef } from "react";
 import { useInfiniteScroll } from "custom-hooks";
 const VideoCard = () => {
@@ -97,7 +97,7 @@ const VideoCard = () => {
 					)
 				)
 			) : (
-				<h1>Loading...</h1>
+				<LoadingCards />
 			)}
 			<div ref={lastElement} />
 		</div>
