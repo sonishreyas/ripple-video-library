@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
-import { useAuth, useTheme } from "../../context";
+import { useAuth, useNav, useTheme } from "context";
 
 const Header = () => {
 	const { authState } = useAuth();
+	const { setShowNavbar } = useNav();
 	const { themeIcon, handleSetTheme } = useTheme();
+	const handleShowNavbar = () => setShowNavbar(true);
+
 	return (
 		<header className="header header-shadow flex-column">
 			<div className="flex-row justify-content-space-between align-center w-100">
 				<div className="brand-info flex-row justify-content-center align-center flex-gap-1 m-5">
 					<section>
-						<i className="fas fa-bars header-nav-icon"></i>
+						<i
+							className="fas fa-bars header-nav-icon"
+							onClick={handleShowNavbar}
+						></i>
 					</section>
 					<Link to={"/"} className="no-link header-brand">
 						<img

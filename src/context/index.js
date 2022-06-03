@@ -6,3 +6,4 @@ export { WatchlaterProvider, useWatchlater } from "./watch-later-context";
 export { PlaylistProvider, usePlaylist } from "./playlist-context";
 export { ThemeProvider, useTheme } from "./theme-context";
 export { CommentsProvider, useComments } from "./comments-context";
+export { useNav, NavProvider } from "./nav-context";

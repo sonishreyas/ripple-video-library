@@ -1,139 +1,59 @@
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useNav } from "context";
+import { navData } from "./nav-data";
 const NavBar = () => {
-	const { authState } = useAuth();
+	const { setShowNavbar } = useNav();
 	const getActiveClass = ({ isActive }) =>
 		isActive
 			? "text-cta-color rui-drawer-links navbar-rp-section"
 			: "rui-drawer-links navbar-rp-section";
+	const handleHideNavbar = () => setShowNavbar(false);
+
 	return (
-		<nav className="nav nav-shadow navbar-rp">
-			<ul className="rui-drawer-content--list no-list">
-				<li className="flex-row justify-content-space-between align-center rui-drawer-content rui-drawer-header display-inactive">
-					<section>
-						<img
-							src="https://raw.githubusercontent.com/sonishreyas/rippleUI/dev/components/media/images/ripple-logo.png"
-							alt="Logo of ripple play"
-							className="brand-logo"
-						/>
-						<sub className="brand-name">Ripple Play</sub>
-					</section>
-					<section>
-						<i className="fas fa-angle-left close-drawer"></i>
-					</section>
-				</li>
-				<li className="rui-drawer-content m-10">
-					<NavLink to={"/"} className={getActiveClass}>
-						<span>
-							<i className="fa-solid fa-house-chimney"></i>
-						</span>
-						<span className="rui-drawer-content--text p-2 text-center">
-							Home
-						</span>
-					</NavLink>
-				</li>
-				<li className="rui-drawer-content m-10">
-					{authState.token.length ? (
-						<NavLink to={"/watchlater"} className={getActiveClass}>
-							<span>
-								<i className="fa-solid fa-clock"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Watch Later
-							</span>
-						</NavLink>
-					) : (
-						<Link
-							to={"/auth"}
-							state={{ state: "/watchlater" }}
-							className="rui-drawer-links navbar-rp-section"
-						>
-							<span>
-								<i className="fa-solid fa-clock"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Watch Later
-							</span>
-						</Link>
-					)}
-				</li>
-				<li className="rui-drawer-content m-10">
-					{authState.token.length ? (
-						<NavLink to={"/liked"} className={getActiveClass}>
-							<span>
-								<i className="fa-solid fa-thumbs-up"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Liked
-							</span>
-						</NavLink>
-					) : (
-						<Link
-							to={"/auth"}
-							state={{ state: "/liked" }}
-							className="rui-drawer-links navbar-rp-section"
-						>
-							<span>
-								<i className="fa-solid fa-thumbs-up"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Liked
-							</span>
-						</Link>
-					)}
-				</li>
-				<li className="rui-drawer-content m-10">
-					{authState.token.length ? (
-						<NavLink to={"/playlist"} className={getActiveClass}>
-							<span>
-								<i className="fas fa-folder-plus"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Playlist
-							</span>
-						</NavLink>
-					) : (
-						<Link
-							to={"/auth"}
-							state={{ state: "/playlist" }}
-							className="rui-drawer-links navbar-rp-section"
-						>
-							<span>
-								<i className="fas fa-folder-plus"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Playlist
-							</span>
-						</Link>
-					)}
-				</li>
-				<li className="rui-drawer-content m-10">
-					{authState.token.length ? (
-						<NavLink to={"/history"} className={getActiveClass}>
-							<span>
-								<i className="fa-solid fa-clock-rotate-left"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Watch History
-							</span>
-						</NavLink>
-					) : (
-						<Link
-							to={"/auth"}
-							state={{ state: "/history" }}
-							className="rui-drawer-links navbar-rp-section"
-						>
-							<span>
-								<i className="fa-solid fa-clock-rotate-left"></i>
-							</span>
-							<span className="rui-drawer-content--text p-2 text-center">
-								Watch History
-							</span>
-						</Link>
-					)}
-				</li>
-			</ul>
-		</nav>
+		<div className="nav-container p-0 m-0 w-100 h-auto flex-row">
+			<div className="nav-content p-0 m-0">
+				<nav className="nav nav-shadow navbar-rp">
+					<ul className="rui-drawer-content--list no-list">
+						<li className="flex-row justify-content-space-between align-center rui-drawer-content rui-drawer-header">
+							<Link to={"/"} className="no-link">
+								<img
+									src="https://raw.githubusercontent.com/sonishreyas/rippleUI/dev/components/media/images/ripple-logo.png"
+									alt="Logo of ripple UI"
+									className="brand-logo"
+								/>
+								<sub className="brand-name">Ripple Play</sub>
+							</Link>
+							<section>
+								<i
+									className="fas fa-angle-left close-drawer"
+									onClick={handleHideNavbar}
+								></i>
+							</section>
+						</li>
+						<>
+							{navData.map(({ id, route, name, icon }) => (
+								<li className="rui-drawer-content m-10" key={id}>
+									<NavLink to={route} className={getActiveClass}>
+										<div className="rui-drawer-links flex-row justify-content-start align-center flex-gap-1 p-5 m-2">
+											<span>
+												<i className={`${icon}`}></i>
+											</span>
+											<span className="rui-drawer-content--text p-2 text-center">
+												{name}
+											</span>
+										</div>
+									</NavLink>
+								</li>
+							))}
+						</>
+					</ul>
+				</nav>
+			</div>
+			<div
+				className="nav-background w-100 h-100"
+				onClick={handleHideNavbar}
+			></div>
+		</div>
 	);
 };
 

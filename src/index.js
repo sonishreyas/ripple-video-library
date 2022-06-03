@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./styles/app.css";
 import App from "./App";
 import {
 	AuthProvider,
@@ -11,6 +11,7 @@ import {
 	PlaylistProvider,
 	ThemeProvider,
 	ProfileProvider,
+	NavProvider,
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -29,8 +30,10 @@ ReactDOM.render(
 							<PlaylistProvider>
 								<LikedProvider>
 									<ThemeProvider>
-										<App />
-										<ToastPortal />
+										<NavProvider>
+											<App />
+											<ToastPortal />
+										</NavProvider>
 									</ThemeProvider>
 								</LikedProvider>
 							</PlaylistProvider>
