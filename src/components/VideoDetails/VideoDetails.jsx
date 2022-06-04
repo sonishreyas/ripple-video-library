@@ -6,12 +6,11 @@ import {
 	getDataFromId,
 	presentObjInArray,
 	getCountValue,
-	CategoryVideos,
 	presentInArray,
 } from "../../utils";
 import { LikeButton } from "./VideoButtons";
-import { useEffect, useState } from "react";
-import { SimilarVideosCards } from "./SimilarVideoCards";
+import { useEffect } from "react";
+import { SimilarVideosCards, Comments } from ".";
 const VideoDetails = () => {
 	const { videoId } = useParams();
 	const { authState } = useAuth();
@@ -29,18 +28,6 @@ const VideoDetails = () => {
 			}
 		}
 	}, []);
-	const categoryFilterHandler = (name, videosData) =>
-		videosDispatch({
-			type: "FILTER_CATEGORY",
-			payload: {
-				categoryName: name,
-				categoryFilters: ((categoryFilters) => {
-					const newCategoryFilters = { ...categoryFilters };
-					newCategoryFilters[name] = true;
-					return newCategoryFilters;
-				})(videosState.categoryFilters),
-			},
-		});
 
 	const similarVideos = videosData.reduce(
 		(prevVideo, currVideo) =>
@@ -57,7 +44,7 @@ const VideoDetails = () => {
 	return (
 		<main className="main">
 			<div className="flex-row flex-gap-half single-page">
-				<div className="flex-column">
+				<div className="flex-column flex-grow-1">
 					<div className="flex-row justify-content-start align-start">
 						<iframe
 							className="video-iframe mx-5"
@@ -69,8 +56,9 @@ const VideoDetails = () => {
 						></iframe>
 					</div>
 					<h3 className="text-bold py-5 my-5">{video.title}</h3>
+					<div className="border-bottom"></div>
 					<div className="flex-row justify-content-space-between">
-						<div className="flex-column justify-content-center">
+						<div className="flex-column justify-content-center my-5">
 							<div className="flex-row justify-content-start align-center">
 								<div>
 									<img
@@ -109,14 +97,16 @@ const VideoDetails = () => {
 							)}
 						</div>
 					</div>
+					<div className="border-bottom"></div>
+					<Comments comments={video.comments} />
 				</div>
 				<div className="flex-row flex-gap-1">
 					<ul>
 						<li className="no-list form-heading text-bold py-5 px-5">
 							Related Videos
 						</li>
-						{similarVideos.map((item) => (
-							<SimilarVideosCards videoData={item} />
+						{similarVideos.map((item, index) => (
+							<SimilarVideosCards videoData={item} key={index} />
 						))}
 					</ul>
 				</div>

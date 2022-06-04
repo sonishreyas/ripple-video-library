@@ -5,9 +5,7 @@ import {
 	useLiked,
 	useWatchlater,
 	usePlaylist,
-	useLogin,
-	useRegister,
-} from "../../context";
+} from "context";
 
 const Settings = () => {
 	const { authDispatch } = useAuth();
@@ -15,8 +13,6 @@ const Settings = () => {
 	const { likedDispatch } = useLiked();
 	const { watchlaterDispatch } = useWatchlater();
 	const { playlistDispatch } = usePlaylist();
-	const { loginDispatch } = useLogin();
-	const { registerDispatch } = useRegister();
 	const navigate = useNavigate();
 	const handleLogout = () => {
 		localStorage.clear();
@@ -25,8 +21,6 @@ const Settings = () => {
 		likedDispatch({ type: "RESET" });
 		watchlaterDispatch({ type: "RESET" });
 		playlistDispatch({ type: "RESET" });
-		loginDispatch({ type: "RESET" });
-		registerDispatch({ type: "RESET" });
 		navigate("/");
 	};
 	return (

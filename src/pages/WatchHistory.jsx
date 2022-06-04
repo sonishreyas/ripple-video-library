@@ -1,4 +1,7 @@
+import { useDocumentTitle } from "custom-hooks";
 import { HistoryContent } from "../components";
-const WatchHistoryPage = () => <HistoryContent />;
-
+const WatchHistoryPage = () => {
+	useDocumentTitle("Watch History | Ripple Play");
+	return <HistoryContent />;
+};
 export { WatchHistoryPage };

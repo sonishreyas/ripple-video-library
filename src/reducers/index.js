@@ -4,3 +4,4 @@ export { historyReducer } from "./history-reducer";
 export { likedReducer } from "./liked-reducer";
 export { watchlaterReducer } from "./watch-later-reducer";
 export { playlistReducer } from "./playlist-reducer";
+export { commentsReducer } from "./comments-reducer";

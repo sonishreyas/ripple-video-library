@@ -7,6 +7,7 @@ import {
 } from "react";
 import { playlistReducer } from "../reducers";
 import { getPlaylistDataHandler } from "../utils";
+import { useAuth } from ".";
 
 const defaultPlaylistState = {
 	playlists: [],
@@ -24,7 +25,11 @@ const PlaylistProvider = ({ children }) => {
 	const [showPlaylistModal, setShowPlaylistModal] = useState(false);
 	const [showCreatePlaylist, setShowCreatePlaylist] = useState(false);
 	const [showEditPlaylist, setShowEditPlaylist] = useState(false);
-	useEffect(() => getPlaylistDataHandler(playlistDispatch), []);
+	const { authState } = useAuth();
+	useEffect(
+		() => authState.token?.length && getPlaylistDataHandler(playlistDispatch),
+		[authState]
+	);
 	return (
 		<PlaylistContext.Provider
 			value={{

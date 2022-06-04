@@ -1,5 +1,6 @@
 export { CategoryVideos, VideosCompose } from "./filters";
 export {
+	RequireAuth,
 	loginHandler,
 	registerHandler,
 	setValueHandler,
@@ -19,6 +20,7 @@ export {
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
 	getCountValue,
+	trimData,
 } from "./helpers";
 export {
 	addToHistoryHandler,

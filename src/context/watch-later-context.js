@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect } from "react";
 import { useReducer } from "react";
 import { watchlaterReducer } from "../reducers";
 import { getWatchlaterDataHandler } from "../utils";
+import { useAuth } from ".";
 
 const defaultWatchlaterState = {
 	watchlaterItemsCount: 0,
@@ -15,7 +16,12 @@ const WatchlaterProvider = ({ children }) => {
 		watchlaterReducer,
 		defaultWatchlaterState
 	);
-	useEffect(() => getWatchlaterDataHandler(watchlaterDispatch), []);
+	const { authState } = useAuth();
+	useEffect(
+		() =>
+			authState.token?.length && getWatchlaterDataHandler(watchlaterDispatch),
+		[authState]
+	);
 	return (
 		<WatchlaterContext.Provider
 			value={{

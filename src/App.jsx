@@ -1,35 +1,15 @@
-import "./App.css";
-import { Routes, Route, Outlet } from "react-router-dom";
-import {
-	Authentication,
-	Home,
-	WatchHistory,
-	Playlist,
-	LikedVideos,
-	WatchLater,
-	Profile,
-	Explore,
-	VideosDetails,
-} from "./pages";
-import { PlaylistDetails, NavBar, Header, Footer } from "./components";
-import Mockman from "mockman-js";
+import { Outlet } from "react-router-dom";
+import { NavBar, Header, Footer } from "./components";
+import { useNav } from "context";
+import { AppRoutes } from "routes";
+
 function App() {
+	const { showNavbar } = useNav();
 	return (
 		<div className="grid-container">
 			<Header />
-			<Routes>
-				<Route path="/" element={<Explore />} />
-				<Route path="/videos/:videoId" element={<VideosDetails />} />
-				<Route path="/history" element={<WatchHistory />} />
-				<Route path="/playlist" element={<Playlist />} />
-				<Route path="/playlist/:playlistId" element={<PlaylistDetails />} />
-				<Route path="/liked" element={<LikedVideos />} />
-				<Route path="/watchlater" element={<WatchLater />} />
-				<Route path="/auth" element={<Authentication />} />
-				<Route path="/profile" element={<Profile />} />
-				<Route path="/mock" element={<Mockman />} />
-			</Routes>
-			<NavBar />
+			<AppRoutes />
+			{showNavbar && <NavBar />}
 			<Outlet />
 			<Footer />
 		</div>

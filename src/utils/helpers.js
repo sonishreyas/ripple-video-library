@@ -106,6 +106,9 @@ const getCountValue = (value) =>
 			? value / 1000000 + "M"
 			: value / 1000 + "K"
 		: value;
+
+const trimData = (data) =>
+	(data.length < 40 ? data : data.substr(0, 38)) + "..";
 export {
 	removeFromArray,
 	presentInWatchLater,
@@ -119,4 +122,5 @@ export {
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
 	getCountValue,
+	trimData,
 };

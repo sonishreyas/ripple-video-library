@@ -14,7 +14,7 @@ const WatchLaterButton = (props) => {
 					onClick={(e) =>
 						addToWatchlaterHandler(e, props.videoId, watchlaterDispatch)
 					}
-					className="cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
+					className="cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater mx-5 my-2 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
 				>
 					<span className="wishlist-icon">
 						<i className="fa-solid fa-clock social"></i>
@@ -27,7 +27,7 @@ const WatchLaterButton = (props) => {
 					onClick={(e) =>
 						removeFromWatchlaterHandler(e, props.videoId, watchlaterDispatch)
 					}
-					className="cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
+					className="cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater mx-5 my-2 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
 				>
 					<span className="wishlist-icon">
 						<i className="fa-solid fa-clock social"></i>
@@ -39,7 +39,7 @@ const WatchLaterButton = (props) => {
 				<Link
 					to="/auth"
 					state={{ state: "/" }}
-					className="no-link-decoration cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
+					className="no-link-decoration cursor-pointer outline-btn p-5 b-radius-2 text-bold card-watchlater mx-5 my-2 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
 				>
 					<span className="wishlist-icon">
 						<i className="fa-solid fa-clock social"></i>
@@ -67,7 +67,7 @@ const AddToPlaylistBtn = (props) => {
 		<>
 			{props.btnType === "add" && (
 				<button
-					className="cursor-pointer primary-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
+					className="cursor-pointer primary-btn p-5 b-radius-2 text-bold card-watchlater mx-5 my-2 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
 					onClick={handleShowPlaylist}
 				>
 					<span>
@@ -81,7 +81,7 @@ const AddToPlaylistBtn = (props) => {
 				<Link
 					to="/auth"
 					state={{ state: "/" }}
-					className="no-link-decoration cursor-pointer primary-btn p-5 b-radius-2 text-bold card-watchlater m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
+					className="no-link-decoration cursor-pointer primary-btn p-5 b-radius-2 text-bold card-watchlater mx-5 my-2 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
 				>
 					<span>
 						<i className="fas fa-folder-plus social"></i>
