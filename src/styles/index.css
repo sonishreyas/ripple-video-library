@@ -189,6 +189,10 @@
 	.single-page {
 		flex-wrap: wrap;
 	}
+
+	.video-iframe {
+		height: 40rem;
+	}
 }
 .modal {
 	position: absolute;

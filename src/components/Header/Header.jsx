@@ -61,8 +61,8 @@ const Header = () => {
 										className="textbox-content p-5"
 										type="text"
 										name="search"
-										placeholder="Search users..."
-										aria-label="Search users here"
+										placeholder="Search videos..."
+										aria-label="Search videos here"
 										onChange={handleSearch}
 										value={searchQuery}
 									/>
