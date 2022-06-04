@@ -9,7 +9,7 @@ const AuthenticationTabs = () => {
 			<article className="horizontal-tabs-container flex-column flex-wrap flex-gap-1 b-radius-2 p-5">
 				<article className="horizontal-tabs-btn-container flex-row flex-grow-1">
 					<button
-						className={`tabs-btn p-5 flex-row flex-grow-1 justify-content-center align-center ${
+						className={`tabs-btn p-5 flex-row flex-grow-1 justify-content-center align-center cursor-pointer ${
 							activeTab === "Login" ? "horizontal-tabs-btn-active" : ""
 						}`}
 						onClick={() => tabClickhandler("Login")}
@@ -17,7 +17,7 @@ const AuthenticationTabs = () => {
 						Login
 					</button>
 					<button
-						className={`tabs-btn p-5 flex-row flex-grow-1 justify-content-center align-center ${
+						className={`tabs-btn p-5 flex-row flex-grow-1 justify-content-center align-center cursor-pointer ${
 							activeTab === "Register" ? "horizontal-tabs-btn-active" : ""
 						}`}
 						onClick={() => tabClickhandler("Register")}

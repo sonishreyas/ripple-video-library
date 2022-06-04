@@ -57,6 +57,7 @@ const VideosProvider = ({ children }) => {
 		<VideosContext.Provider
 			value={{
 				videosState,
+				allVideos: videosData,
 				videosData: filteredVideosData,
 				categoriesData: categoriesData,
 				videosDispatch,

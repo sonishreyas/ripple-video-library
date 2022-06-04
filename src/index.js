@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./styles/app.css";
 import App from "./App";
 import {
-	RegisterProvider,
-	LoginProvider,
 	AuthProvider,
 	VideosProvider,
 	HistoryProvider,
@@ -13,9 +11,11 @@ import {
 	PlaylistProvider,
 	ThemeProvider,
 	ProfileProvider,
+	NavProvider,
 } from "./context";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
+import { ToastPortal } from "components";
 
 // Call make Server
 makeServer();
@@ -23,27 +23,24 @@ makeServer();
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>
-			<RegisterProvider>
-				<LoginProvider>
-					<AuthProvider>
-						<VideosProvider>
-							<HistoryProvider>
-								<WatchlaterProvider>
-									<PlaylistProvider>
-										<LikedProvider>
-											<ThemeProvider>
-												<ProfileProvider>
-													<App />
-												</ProfileProvider>
-											</ThemeProvider>
-										</LikedProvider>
-									</PlaylistProvider>
-								</WatchlaterProvider>
-							</HistoryProvider>
-						</VideosProvider>
-					</AuthProvider>
-				</LoginProvider>
-			</RegisterProvider>
+			<AuthProvider>
+				<VideosProvider>
+					<HistoryProvider>
+						<WatchlaterProvider>
+							<PlaylistProvider>
+								<LikedProvider>
+									<ThemeProvider>
+										<NavProvider>
+											<App />
+											<ToastPortal />
+										</NavProvider>
+									</ThemeProvider>
+								</LikedProvider>
+							</PlaylistProvider>
+						</WatchlaterProvider>
+					</HistoryProvider>
+				</VideosProvider>
+			</AuthProvider>
 		</Router>
 	</React.StrictMode>,
 	document.getElementById("root")

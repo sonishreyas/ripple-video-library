@@ -1,4 +1,8 @@
+import { useDocumentTitle } from "custom-hooks";
 import { HomeContent } from "../components";
-const HomePage = () => <HomeContent />;
+const HomePage = () => {
+	useDocumentTitle("Home | Ripple Play");
+	return <HomeContent />;
+};
 
 export { HomePage };
