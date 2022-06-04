@@ -27,9 +27,9 @@
 }
 
 .grid-container .nav {
-	grid-column: 1/3;
-	grid-row: 2/12;
-	width: 20rem;
+	grid-column: 1/2;
+	grid-row: 2/13;
+	width: 12rem;
 	height: 100%;
 }
 .rui-drawer-header {
@@ -47,6 +47,14 @@
 }
 
 @media screen and (max-width: 768px) {
+	.search-bar {
+		position: absolute;
+		top: 13rem;
+		right: 0;
+		width: 100%;
+		padding: 0 1rem 0 1rem;
+	}
+
 	.rui-drawer-header {
 		display: flex;
 	}
@@ -77,6 +85,12 @@
 	.create-post-container,
 	.post-card > * {
 		width: 100%;
+	}
+	.grid-container .nav {
+		grid-column: 1/2;
+		grid-row: 2/13;
+		width: 20rem;
+		height: 100%;
 	}
 }
 

@@ -13,7 +13,7 @@ const NavBar = () => {
 		<div className="nav-container p-0 m-0 w-100 h-auto flex-row">
 			<div className="nav-content p-0 m-0">
 				<nav className="nav nav-shadow navbar-rp">
-					<ul className="rui-drawer-content--list no-list">
+					<ul className="rui-drawer-content--list no-list flex-column justify-content-start align-start">
 						<li className="flex-row justify-content-space-between align-center rui-drawer-content rui-drawer-header">
 							<Link to={"/"} className="no-link">
 								<img
@@ -32,9 +32,9 @@ const NavBar = () => {
 						</li>
 						<>
 							{navData.map(({ id, route, name, icon }) => (
-								<li className="rui-drawer-content m-10" key={id}>
+								<li className="rui-drawer-content" key={id}>
 									<NavLink to={route} className={getActiveClass}>
-										<div className="rui-drawer-links flex-row justify-content-start align-center flex-gap-1 p-5 m-2">
+										<div className="rui-drawer-links flex-row justify-content-center align-center flex-gap-1 flex-wrap p-5 m-2">
 											<span>
 												<i className={`${icon}`}></i>
 											</span>
