@@ -53,7 +53,7 @@ const NavBar = () => {
 				className="nav-background w-100 h-100"
 				onClick={handleHideNavbar}
 			></div>
-		</div>
+		</div>		
 	);
 };
 
