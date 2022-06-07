@@ -5,9 +5,9 @@
     <img src="https://raw.githubusercontent.com/sonishreyas/rippleUI/dev/components/media/images/ripple-logo.png" alt="Ripple UI logo" >
   </a>
 </p>
-<h1 align="center" color="green">Ripple Store</h3>
+<h1 align="center" color="green">Ripple Play</h3>
 <p align="center">
- An e-commerce website to buy the best footwear. Build using HTML, CSS, and Javascript.
+ Ripple Play is a video library app built using HTML, CSS, and React.
   <br>
   <a href="https://ripple-video-library.netlify.app/"><strong>Here</strong></a>
  <br />
@@ -32,8 +32,13 @@
 ▶️ Forget Password <br/>
 ▶️ User Profile Page <br/>
 ▶️ Playlist Management <br/>
-
+▶️ Similar videos <br/>
 
 # Technology Stack
+
+- Html
+- CSS
 - React
+
+<img src = "https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white">  <img src = "https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3&logoColor=white">  <img src="https://img.shields.io/badge/-React-1572B6?style=flat&logo=react">
 
