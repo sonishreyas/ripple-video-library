@@ -16,7 +16,6 @@ const addCommentHandler = (
 ) => {
 	e.preventDefault();
 	(async () => {
-		console.log(comment);
 		try {
 			const response = await axios.post(
 				`/api/video/${videoId}`,
