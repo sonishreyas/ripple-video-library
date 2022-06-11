@@ -1,6 +1,7 @@
-import { usePlaylist } from "../../context";
+import { usePlaylist } from "context";
 import { AddPlaylistBtn, CreatePlaylist } from ".";
-import { addVideoToPlaylistHandler, checkIdPresentInArray } from "../../utils";
+import { addVideoToPlaylistHandler, checkIdPresentInArray } from "utils";
+
 const PlaylistModal = () => {
 	const {
 		playlistState,

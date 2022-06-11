@@ -1,4 +1,5 @@
 import { ProfileTabs } from ".";
+
 const ProfileContent = () => {
 	return (
 		<>

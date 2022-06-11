@@ -1,6 +1,6 @@
 import { VideoHorizontalCard } from ".";
-import { useVideos, useLiked } from "../../context";
-import { getDataFromId, removeFromLikedHandler } from "../../utils";
+import { useVideos, useLiked } from "context";
+import { getDataFromId, removeFromLikedHandler } from "utils";
 const LikedContent = () => {
 	const { likedState, likedDispatch } = useLiked();
 	const { videosData } = useVideos();

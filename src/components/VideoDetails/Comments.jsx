@@ -1,4 +1,4 @@
-import { useAuth, useVideos } from "../../context";
+import { useAuth, useVideos } from "context";
 import { useState } from "react";
 import { addCommentHandler } from "utils";
 import { v4 as uuid } from "uuid";
@@ -96,8 +96,8 @@ const Comments = ({ comments, videoId }) => {
 					</div>
 				</li>
 			)}
-			{comments.length &&
-				comments.map(({ _id, name, initials, comment }) => (
+			{comments?.length &&
+				comments?.map(({ _id, name, initials, comment }) => (
 					<li className="no-list" key={_id}>
 						<div className="flex-row justify-content-start align-center">
 							<div>

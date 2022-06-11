@@ -1,14 +1,15 @@
 import { useParams, Navigate } from "react-router-dom";
-import { usePlaylist, useVideos } from "../../context";
+import { usePlaylist, useVideos } from "context";
 import { VideoHorizontalCard } from "../VideoHorizontalCard";
 import {
 	getDataFromPlaylist,
 	getVideosFromPlaylist,
 	removeVideoFromPlaylistHandler,
 	removePlaylistHandler,
-} from "../../utils";
+} from "utils";
 import { PlaylistListing } from "./PlaylistListing";
 import { EditPlaylistName } from "./EditPlaylistName";
+
 const PlaylistDetails = () => {
 	const { playlistId } = useParams();
 	const {

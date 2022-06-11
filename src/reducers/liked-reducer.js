@@ -13,7 +13,6 @@ const likedReducer = (likedState, { type, payload }) => {
 				likedItemsCount: payload.likedItemsCount,
 				itemsInLiked: [...likedState.itemsInLiked, { ...payload.itemsInLiked }],
 			};
-
 		case "REMOVE_ITEM":
 			return {
 				...likedState,

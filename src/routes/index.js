@@ -1,2 +1,2 @@
-export { RequireAuth } from "./RequireAuth";
-export { AppRoutes } from "./AppRoutes";
+export * from "./RequireAuth";
+export * from "./AppRoutes";

@@ -1,6 +1,7 @@
 import { VideoHorizontalCard } from ".";
-import { useVideos, useWatchlater } from "../../context";
-import { getDataFromId, removeFromWatchlaterHandler } from "../../utils";
+import { useVideos, useWatchlater } from "context";
+import { getDataFromId, removeFromWatchlaterHandler } from "utils";
+
 const WatchlaterContent = () => {
 	const { watchlaterState, watchlaterDispatch } = useWatchlater();
 	const { videosData } = useVideos();

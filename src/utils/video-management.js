@@ -1,11 +1,12 @@
 import axios from "axios";
 
 /**
- * Add video data to liked
- * @param {*} element
- * @param {Object} videoData video to be added in liked
- * @param {string} token encodedToken of user
- * @param {function} likedDispatch Reducer function
+ * Add comment to a video
+ * @param {Element} e Element
+ * @param {string} videoId Video Id of the video we need to add comment to
+ * @param {function} setFilteredVideosData Updates video data
+ * @param {Array} videosData videos Data
+ * @param {Object} comment Comment data to be inserted
  */
 const addCommentHandler = (
 	e,

@@ -23,4 +23,5 @@ const NavProvider = ({ children }) => {
 };
 
 const useNav = () => useContext(NavContext);
+
 export { useNav, NavProvider };

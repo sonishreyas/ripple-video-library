@@ -1,16 +1,8 @@
 import { Link } from "react-router-dom";
-import { trimData } from "../../utils";
+import { trimData } from "utils";
+
 const SimilarVideosCards = ({ videoData }) => {
-	const {
-		_id,
-		title,
-		channelName,
-		verified,
-		views,
-		likes,
-		channelProfileURL,
-		thumbnailURL,
-	} = videoData;
+	const { _id, title, channelName, verified, thumbnailURL } = videoData;
 	return (
 		<li key={_id} className="no-list my-8">
 			<article className="cursor-pointer card horizontal card-shadow p-5 b-radius-2 w-100 h-auto list-card">

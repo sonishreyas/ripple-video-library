@@ -73,22 +73,43 @@ const registerHandler = (
 	})();
 };
 
+/**
+ * Set values in the input form
+ * @param {Element} e Element
+ * @param {string} field Field we need to update the value for
+ * @param {string} type Type of the field
+ * @param {function} loginDispatch Dispatch function
+ */
 const setValueHandler = (e, field, type, loginDispatch) => {
 	const fieldValue = { type: type, payload: {} };
 	fieldValue.payload[field] = e.target.value;
 	loginDispatch(fieldValue);
 };
 
+/**
+ * Set test credentials into the input form
+ * @param {function} loginDispatch Dispatch Function
+ * @returns
+ */
 const setTestHandler = (loginDispatch) =>
 	loginDispatch({
 		type: "TEST_CREDENTIAL",
 		payload: { email: "test@gmail.com", password: "test123" },
 	});
 
+/**
+ *
+ * @param {string} field Field we need to update value for
+ * @param {boolean} value Value to be updated
+ * @param {string} type Type of value
+ * @param {function} loginDispatch Dispatch Function
+ * @param {Object} focusReset Set all other field to false
+ */
 const setFocusHandler = (field, value, type, loginDispatch, focusReset) => {
 	focusReset[field] = value;
 	loginDispatch({ payload: { focus: focusReset }, type: type });
 };
+
 export {
 	loginHandler,
 	registerHandler,

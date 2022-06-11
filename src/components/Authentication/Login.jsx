@@ -5,9 +5,10 @@ import {
 	setValueHandler,
 	setTestHandler,
 	setFocusHandler,
-} from "../../utils";
-import { useAuth } from "../../context";
+} from "utils";
+import { useAuth } from "context";
 import { loginReducer } from "reducers";
+
 const Login = () => {
 	const [loginState, loginDispatch] = useReducer(loginReducer, {
 		email: "",

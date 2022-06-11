@@ -41,4 +41,5 @@ const HistoryProvider = ({ children }) => {
 };
 
 const useHistory = () => useContext(HistoryContext);
+
 export { useHistory, HistoryProvider };

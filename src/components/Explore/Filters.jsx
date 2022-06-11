@@ -1,4 +1,4 @@
-import { useVideos } from "../../context";
+import { useVideos } from "context";
 
 const Filters = () => {
 	const { categoriesData, videosState, videosDispatch, clearFilters } =

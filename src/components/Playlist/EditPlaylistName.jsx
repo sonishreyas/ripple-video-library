@@ -1,5 +1,5 @@
-import { usePlaylist } from "../../context";
-import { updatePlaylistHandler } from "../../utils";
+import { usePlaylist } from "context";
+import { updatePlaylistHandler } from "utils";
 import { useState } from "react";
 
 const EditPlaylistName = ({ playlistId }) => {
@@ -35,7 +35,7 @@ const EditPlaylistName = ({ playlistId }) => {
 		});
 	};
 	return (
-		<div classname="flex-column justify-content-center align-center my-5 ">
+		<div className="flex-column justify-content-center align-center my-5 ">
 			<section
 				className={`input-container flex-column m-5 pr-10 w-100 ${
 					focus || playlistState.newPlaylist.length ? "focused" : ""

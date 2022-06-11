@@ -1,10 +1,11 @@
 import { VideoHorizontalCard } from ".";
-import { useVideos, useHistory } from "../../context";
+import { useVideos, useHistory } from "context";
 import {
 	getDataFromId,
 	removeFromHistoryHandler,
 	removeAllFromHistoryHandler,
-} from "../../utils";
+} from "utils";
+
 const HistoryContent = () => {
 	const { historyState, historyDispatch, pauseHistory, setPauseHistory } =
 		useHistory();

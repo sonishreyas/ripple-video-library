@@ -1,7 +1,7 @@
-export { loginReducer, registerReducer, authReducer } from "./auth-reducer";
-export { videosReducer, sortByReducer } from "./videos-reducer";
-export { historyReducer } from "./history-reducer";
-export { likedReducer } from "./liked-reducer";
-export { watchlaterReducer } from "./watch-later-reducer";
-export { playlistReducer } from "./playlist-reducer";
-export { commentsReducer } from "./comments-reducer";
+export * from "./auth-reducer";
+export * from "./videos-reducer";
+export * from "./history-reducer";
+export * from "./liked-reducer";
+export * from "./watch-later-reducer";
+export * from "./playlist-reducer";
+export * from "./comments-reducer";

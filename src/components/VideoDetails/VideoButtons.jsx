@@ -1,5 +1,5 @@
-import { addToLikedHandler, removeFromLikedHandler } from "../../utils";
-import { useLiked } from "../../context";
+import { addToLikedHandler, removeFromLikedHandler } from "utils";
+import { useLiked } from "context";
 import { Link } from "react-router-dom";
 
 const LikeButton = ({ videoId, btnType }) => {
@@ -31,7 +31,7 @@ const LikeButton = ({ videoId, btnType }) => {
 			{btnType === "redirect" && (
 				<Link
 					to="/auth"
-					state={{ state: `/videos/${videoId}` }}
+					state={{ from: { pathname: `/videos/${videoId}` } }}
 					className="no-link-decoration cursor-pointer outline-btn p-5 b-radius-2 text-bold m-5 flex-row justify-content-center align-center flex-gap-1 flex-grow-1"
 				>
 					<span className="wishlist-icon">

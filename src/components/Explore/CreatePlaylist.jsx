@@ -1,5 +1,5 @@
-import { usePlaylist } from "../../context";
-import { addNewPlaylistHandler } from "../../utils";
+import { usePlaylist } from "context";
+import { addNewPlaylistHandler } from "utils";
 import { useState } from "react";
 
 const CreatePlaylist = () => {

@@ -1,6 +1,7 @@
-import { usePlaylist } from "../../context";
+import { usePlaylist } from "context";
 import { Link } from "react-router-dom";
 import { AddPlaylistBtn, CreatePlaylist } from "../Explore";
+
 const PlaylistListing = () => {
 	const { playlistState } = usePlaylist();
 	const { showCreatePlaylist } = usePlaylist();

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Profile, Settings } from ".";
+
 const ProfileTabs = () => {
 	const [profileActiveTab, setProfileActiveTab] = useState("Profile");
 	const tabClickHandler = (activeTabName) => setProfileActiveTab(activeTabName);

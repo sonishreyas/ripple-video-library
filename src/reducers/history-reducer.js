@@ -16,7 +16,6 @@ const historyReducer = (historyState, { type, payload }) => {
 					{ ...payload.itemsInHistory },
 				],
 			};
-
 		case "REMOVE_ITEM":
 			return {
 				...historyState,
@@ -26,7 +25,6 @@ const historyReducer = (historyState, { type, payload }) => {
 					payload.itemsInHistory
 				),
 			};
-
 		case "REMOVE_ALL":
 			return {
 				...historyState,

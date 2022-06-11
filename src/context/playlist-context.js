@@ -49,4 +49,5 @@ const PlaylistProvider = ({ children }) => {
 };
 
 const usePlaylist = () => useContext(PlaylistContext);
+
 export { usePlaylist, PlaylistProvider };

@@ -12,7 +12,6 @@ const commentsReducer = (commentsState, { type, payload }) => {
 				...commentsState,
 				comments: [...commentsState.comments, { ...payload.itemsIncomments }],
 			};
-
 		case "REMOVE_ITEM":
 			return {
 				...commentsState,
@@ -22,7 +21,6 @@ const commentsReducer = (commentsState, { type, payload }) => {
 					payload.itemsIncomments
 				),
 			};
-
 		case "REMOVE_ALL":
 			return {
 				...commentsState,

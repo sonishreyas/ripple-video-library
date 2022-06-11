@@ -10,7 +10,6 @@ import {
 	WatchlaterProvider,
 	PlaylistProvider,
 	ThemeProvider,
-	ProfileProvider,
 	NavProvider,
 } from "./context";
 import { makeServer } from "./server";

@@ -16,7 +16,6 @@ const watchlaterReducer = (watchlaterState, { type, payload }) => {
 					{ ...payload.itemsInWatchlater },
 				],
 			};
-
 		case "REMOVE_ITEM":
 			return {
 				...watchlaterState,

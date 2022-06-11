@@ -1,4 +1,4 @@
-import { usePlaylist } from "../../context";
+import { usePlaylist } from "context";
 
 const AddPlaylistBtn = () => {
 	const { setShowCreatePlaylist } = usePlaylist();

@@ -1,5 +1,5 @@
 import { VideoCard, Filters, PlaylistModal } from "./";
-import { usePlaylist } from "../../context";
+import { usePlaylist } from "context";
 
 const ExploreContent = () => {
 	const { showPlaylistModal } = usePlaylist();

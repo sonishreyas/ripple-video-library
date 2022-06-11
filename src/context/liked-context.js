@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { likedReducer } from "../reducers";
 import { getLikedDataHandler } from "../utils";
 import { useAuth } from ".";
+
 const defaultLikedState = {
 	likedItemsCount: 0,
 	itemsInLiked: [],
@@ -32,4 +33,5 @@ const LikedProvider = ({ children }) => {
 };
 
 const useLiked = () => useContext(LikedContext);
+
 export { useLiked, LikedProvider };

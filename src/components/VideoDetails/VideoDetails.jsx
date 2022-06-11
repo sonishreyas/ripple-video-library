@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useVideos, useHistory, useAuth, useLiked } from "../../context";
+import { useVideos, useHistory, useAuth, useLiked } from "context";
 import {
 	removeFromHistoryHandler,
 	addToHistoryHandler,
@@ -7,10 +7,11 @@ import {
 	presentObjInArray,
 	getCountValue,
 	presentInArray,
-} from "../../utils";
+} from "utils";
 import { LikeButton } from "./VideoButtons";
 import { useEffect } from "react";
 import { SimilarVideosCards, Comments } from ".";
+
 const VideoDetails = () => {
 	const { videoId } = useParams();
 	const { authState } = useAuth();

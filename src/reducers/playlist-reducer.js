@@ -1,5 +1,9 @@
-import { removeFromArray } from "../utils";
-
+/**
+ * Update the playlist
+ * @param {Array} playlists Initial Playlists
+ * @param {Object} actionPlaylist Updated playlist
+ * @returns Array of updated playlists
+ */
 const updateVideos = (playlists, actionPlaylist) =>
 	playlists.reduce(
 		(prev, curr) =>
@@ -9,6 +13,12 @@ const updateVideos = (playlists, actionPlaylist) =>
 		[]
 	);
 
+/**
+ * Remove video from playlist
+ * @param {*} playlists Initial Playlists
+ * @param {*} actionPlaylist Updated playlist
+ * @returns Array of updated playlists
+ */
 const removeVideoFromPlaylist = (playlists, actionPlaylist) =>
 	playlists.reduce(
 		(prev, curr) =>
