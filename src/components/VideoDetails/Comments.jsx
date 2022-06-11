@@ -1,7 +1,9 @@
-import { useAuth } from "../../context";
+import { useAuth, useVideos } from "../../context";
 import { useState } from "react";
+import { addCommentHandler } from "utils";
+import { v4 as uuid } from "uuid";
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, videoId }) => {
 	const { authState } = useAuth();
 	const initial =
 		authState?.firstName[0]?.toUpperCase() +
@@ -9,7 +11,7 @@ const Comments = ({ comments }) => {
 	const [showButtons, setShowButton] = useState(false);
 	const [focus, setFocus] = useState(false);
 	const [newComment, setNewComment] = useState("");
-
+	const { setFilteredVideosData, videosData } = useVideos();
 	const handleFocus = () => {
 		if (focus) {
 			setFocus(false);
@@ -27,17 +29,12 @@ const Comments = ({ comments }) => {
 	const handleValueChange = (e) => setNewComment(e.target.value);
 
 	const handleAddComment = (e) => {
-		dispatch(
-			addComment({
-				postId: postId,
-				updatedValue: {
-					comments: [
-						...comments,
-						{ userId: userProfile?.uid, comment: newComment },
-					],
-				},
-			})
-		);
+		addCommentHandler(e, videoId, setFilteredVideosData, videosData, {
+			initials: initial,
+			name: authState?.firstName + authState?.lastName,
+			comment: newComment,
+			_id: uuid(),
+		});
 		setNewComment("");
 		setShowButton(false);
 	};

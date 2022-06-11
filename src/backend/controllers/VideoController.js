@@ -58,10 +58,25 @@ export const getVideoHandler = function (schema, request) {
  * body contains {video}
  * */
 
-export const addCommentToVideo = function (schema, request) {
+export const updateVideoHandler = function (schema, request) {
 	const { videoId } = request.params;
 	try {
 		const { comment } = JSON.parse(request.requestBody);
+		const updatedVideos = this.db.videos.reduce(
+			(prev, curr) =>
+				curr._id === videoId
+					? [
+							...prev,
+							{
+								...curr,
+								comments: [...curr.comments, { ...comment }],
+							},
+					  ]
+					: [...prev, { ...curr }],
+			[]
+		);
+		this.db.videos.update(updatedVideos);
+		return new Response(200, {}, { videos: updatedVideos });
 	} catch (error) {
 		return new Response(
 			500,

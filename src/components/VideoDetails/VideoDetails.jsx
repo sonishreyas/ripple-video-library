@@ -98,7 +98,7 @@ const VideoDetails = () => {
 						</div>
 					</div>
 					<div className="border-bottom"></div>
-					<Comments comments={video.comments} />
+					<Comments comments={video.comments} videoId={video._id} />
 				</div>
 				<div className="flex-row flex-gap-1">
 					<ul>

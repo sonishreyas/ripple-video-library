@@ -61,6 +61,7 @@ const VideosProvider = ({ children }) => {
 				videosData: filteredVideosData,
 				categoriesData: categoriesData,
 				videosDispatch,
+				setFilteredVideosData,
 				clearFilters: defaultVideosState,
 			}}
 		>

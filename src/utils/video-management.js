@@ -1,3 +1,5 @@
+import axios from "axios";
+
 /**
  * Add video data to liked
  * @param {*} element
@@ -5,14 +7,21 @@
  * @param {string} token encodedToken of user
  * @param {function} likedDispatch Reducer function
  */
-const addCommentHandler = (e, videoId, videosDispatch) => {
+const addCommentHandler = (
+	e,
+	videoId,
+	setFilteredVideosData,
+	videosData,
+	comment
+) => {
 	e.preventDefault();
 	(async () => {
+		console.log(comment);
 		try {
 			const response = await axios.post(
-				`/api/user/likes`,
+				`/api/video/${videoId}`,
 				{
-					videoId: videoId,
+					comment: comment,
 				},
 				{
 					headers: {
@@ -21,16 +30,21 @@ const addCommentHandler = (e, videoId, videosDispatch) => {
 					},
 				}
 			);
-			likedDispatch({
-				type: "ADD_ITEM",
-				payload: {
-					likedItemsCount: response.data.likes.length,
-					itemsInLiked: {
-						_id: videoId,
-						updatedAt: formatDateTime(),
-					},
-				},
-			});
+			setFilteredVideosData(
+				videosData.reduce(
+					(prev, curr) =>
+						curr._id === videoId
+							? [
+									...prev,
+									{
+										...curr,
+										comments: [...curr.comments, { ...comment }],
+									},
+							  ]
+							: [...prev, { ...curr }],
+					[]
+				)
+			);
 		} catch (error) {
 			console.log(error);
 		}

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { formatDateTime } from "./date";
 /**
  * Add video data to playlist
  * @param {*} element

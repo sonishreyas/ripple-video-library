@@ -11,9 +11,9 @@ const useVideosDataHook = () => {
 			} catch (error) {
 				console.log(error);
 			}
-		})()
-	},[]);
+		})();
+	}, []);
 	return videosData;
 };
 
-export {useVideosDataHook}; 
+export { useVideosDataHook };
