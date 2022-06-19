@@ -7,3 +7,4 @@ export { WatchHistoryPage as WatchHistory } from "./WatchHistory";
 export { WatchLaterPage as WatchLater } from "./WatchLater";
 export { ExplorePage as Explore } from "./Explore";
 export { VideosDetailsPage as VideosDetails } from "./VideosDetails";
+export { PageNotFound } from "./PageNotFound";

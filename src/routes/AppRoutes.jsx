@@ -8,6 +8,7 @@ import {
 	Profile,
 	Explore,
 	VideosDetails,
+	PageNotFound,
 } from "pages";
 import { Routes, Route } from "react-router-dom";
 import { RequireAuth } from "routes";
@@ -26,6 +27,7 @@ const AppRoutes = () => {
 				<Route path="/watchlater" element={<WatchLater />} />
 				<Route path="/profile" element={<Profile />} />
 			</Route>
+			<Route path="*" element={<PageNotFound />} />
 		</Routes>
 	);
 };
