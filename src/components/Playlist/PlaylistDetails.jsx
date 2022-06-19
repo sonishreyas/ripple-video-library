@@ -33,7 +33,16 @@ const PlaylistDetails = () => {
 	const handleDeletePlaylist = (e) =>
 		removePlaylistHandler(e, playlistId, playlistDispatch);
 
-	const handleEditPlaylistName = () => setShowEditPlaylist(true);
+	const handleEditPlaylistName = () => {
+		playlistDispatch({
+			type: "NEW_PLAYLIST_VALUE",
+			payload: {
+				newPlaylist: playlist?.name,
+			},
+		});
+		setShowEditPlaylist(true);
+	};
+
 	return (
 		<main className="main">
 			{playlist ? (

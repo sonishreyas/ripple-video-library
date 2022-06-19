@@ -100,7 +100,7 @@ const VideoCard = () => {
 			) : (
 				<LoadingCards />
 			)}
-			<div ref={lastElement} />
+			<div ref={lastElement} className="w-100" />
 		</div>
 	);
 };

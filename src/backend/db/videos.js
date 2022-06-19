@@ -54,6 +54,7 @@ export const videos = [
 		category: ["gaming", "chess", "stream"],
 		description:
 			"It can't get better than this. Book a simul with Vishy or Harikrishna here: (CODE SIXTYOFF)",
+		comments: [],
 	},
 	{
 		_id: uuid(),
@@ -73,6 +74,7 @@ export const videos = [
 		category: ["chess"],
 		description:
 			"Vidit Gujrathi has played Vishy Anand several times, but has either lost his games or drawn them. It was for the first time in his career that the India no. 3 managed to get the better of Vishy Anand. This happened in the 14th round of the Tata Steel Chess India Blitz 2019 Grand Chess Tour. Check out the game and also Vishy's expressions when he realizes that he has blundered.",
+		comments: [],
 	},
 	{
 		_id: uuid(),
@@ -91,6 +93,7 @@ export const videos = [
 		category: ["standup", "comedy"],
 		description:
 			"Vidit's 1st stand up comedy video at Spade Comedy Club in Pune. Thanks, Samay Raina, for the opportunity. ",
+		comments: [],
 	},
 	{
 		_id: uuid(),
@@ -108,6 +111,7 @@ export const videos = [
 		likes: 5300,
 		category: ["podcast"],
 		description: "Sadgura talks about various things.",
+		comments: [],
 	},
 	{
 		_id: uuid(),
@@ -126,6 +130,7 @@ export const videos = [
 		category: ["stock", "investing"],
 		description:
 			"Welcome to the first episode of Basics of Trading with Tanmay & Prateek. Learn the difference between technical and fundamental analysis, understand the reason behind stock price movements, and the market psychology behind it with the help of interesting real-life examples! This video is primarily intended for those who are clueless about trading and want to start learning.",
+		comments: [],
 	},
 	{
 		_id: uuid(),
@@ -144,5 +149,6 @@ export const videos = [
 		category: ["standup"],
 		description:
 			"Releasing my first (of few) crowd-work video from the show that I did in Bangalore, on 14th September 2019 at That Comedy Club. Crowd work is a sub-genre of stand up comedy, which is completely unscripted and based purely on audience interactions. ",
+		comments: [],
 	},
 ];

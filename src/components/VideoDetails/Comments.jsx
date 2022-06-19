@@ -96,7 +96,7 @@ const Comments = ({ comments, videoId }) => {
 					</div>
 				</li>
 			)}
-			{comments?.length &&
+			{comments?.length ? (
 				comments?.map(({ _id, name, initials, comment }) => (
 					<li className="no-list" key={_id}>
 						<div className="flex-row justify-content-start align-center">
@@ -111,7 +111,10 @@ const Comments = ({ comments, videoId }) => {
 							</div>
 						</div>
 					</li>
-				))}
+				))
+			) : (
+				<></>
+			)}
 		</ul>
 	);
 };
