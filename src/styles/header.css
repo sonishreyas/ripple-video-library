@@ -16,3 +16,15 @@
 	background-color: var(--secondary-background-color);
 	position: absolute;
 }
+
+@media screen and (max-width: 1180px) {
+	.header-nav-icon {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header-nav-icon {
+		display: block;
+	}
+}
