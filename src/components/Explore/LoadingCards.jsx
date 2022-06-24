@@ -1,7 +1,7 @@
-const LoadingCards = () => {
+const LoadingCards = ({ noOfCards }) => {
 	return (
 		<>
-			{Array.from({ length: 6 }).map((item, index) => (
+			{Array.from({ length: noOfCards }).map((item, index) => (
 				<article
 					className="cursor-pointer card video-card card-shadow b-radius-2 p-5"
 					key={index}

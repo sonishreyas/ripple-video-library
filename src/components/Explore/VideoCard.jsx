@@ -10,14 +10,14 @@ const VideoCard = () => {
 	const { watchlaterState } = useWatchlater();
 	const { authState } = useAuth();
 	const lastElement = useRef(null);
-	let { pageNum } = useInfiniteScroll({
+	let { pageNum, loader } = useInfiniteScroll({
 		lastElement: lastElement,
 		videos: videosData,
 	});
-	const videos = videosData.slice(0, pageNum * 6);
+	const videos = videosData.slice(0, pageNum * 5);
 
 	return (
-		<div className="products-container flex-row align-start flex-gap-2 flex-wrap">
+		<div className="products-container flex-row align-start justify-content-start flex-gap-2 flex-wrap w-100 flex-grow-1">
 			{videos.length ? (
 				videos.map(
 					({
@@ -97,9 +97,13 @@ const VideoCard = () => {
 						</article>
 					)
 				)
+			) : loader ? (
+				<LoadingCards noOfCards={6} />
 			) : (
-				<LoadingCards />
+				<p>No Videos Found</p>
 			)}
+			{loader && <LoadingCards noOfCards={2} />}
+
 			<div ref={lastElement} className="w-100" />
 		</div>
 	);

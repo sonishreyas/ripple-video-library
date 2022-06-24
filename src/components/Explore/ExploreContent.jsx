@@ -4,7 +4,7 @@ import { usePlaylist } from "context";
 const ExploreContent = () => {
 	const { showPlaylistModal } = usePlaylist();
 	return (
-		<main className="main">
+		<main className="main flex-column justify-content-start align-start w-100">
 			<Filters />
 			<VideoCard />
 			{showPlaylistModal && <PlaylistModal />}

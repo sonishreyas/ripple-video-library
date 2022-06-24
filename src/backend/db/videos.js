@@ -135,6 +135,63 @@ export const videos = [
 	{
 		_id: uuid(),
 		title: "RAHUL SUBRAMANIAN",
+		channelName: "Rahul Subramanian",
+		thumbnailURL:
+			"https://i.ytimg.com/vi/wA0W6mFlKOM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdZa8QjIzBn8TCoraLpi08X1vJww",
+		channelProfileURL:
+			"https://yt3.ggpht.com/ytc/AKedOLTOKDVCFS70WhV3J5Y6_1QrLPs5PQrKuSHmmxvw=s48-c-k-c0x00ffffff-no-rj",
+		videoIframe: "https://www.youtube.com/embed/2Oy4HpUJSgE",
+		channelSubscribers: 892000,
+		verified: true,
+		views: 39000,
+		duration: "3:34:17",
+		likes: 6300,
+		category: ["standup"],
+		description:
+			"Releasing my first (of few) crowd-work video from the show that I did in Bangalore, on 14th September 2019 at That Comedy Club. Crowd work is a sub-genre of stand up comedy, which is completely unscripted and based purely on audience interactions. ",
+		comments: [],
+	},
+	{
+		_id: uuid(),
+		title: "The Strumbellas - Spirits",
+		channelName: "The Strumbellas",
+		thumbnailURL:
+			"https://i.ytimg.com/vi/F9kXstb9FF4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCV0-4GlE4O23hfowXplYnUrVA-hA",
+		channelProfileURL:
+			"https://yt3.ggpht.com/ytc/AKedOLTh8Q1-vil6hgaFbRVazNseP-sFXfBd1UVb49cCew=s48-c-k-c0x00ffffff-no-rj-mo",
+		videoIframe: "https://www.youtube.com/embed/F9kXstb9FF4",
+		channelSubscribers: 319000,
+		verified: true,
+		views: 105683216,
+		duration: "3:34:17",
+		likes: 1800000,
+		category: ["music"],
+		description:
+			"Watch the official music video for “Spirits” by The Strumbellas.",
+		comments: [],
+	},
+	{
+		_id: uuid(),
+		title: "The Strumbellas - Spirits",
+		channelName: "Honestly by Tanmay Bhat",
+		thumbnailURL:
+			"https://i.ytimg.com/vi/wA0W6mFlKOM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdZa8QjIzBn8TCoraLpi08X1vJww",
+		channelProfileURL:
+			"https://yt3.ggpht.com/ytc/AKedOLTOKDVCFS70WhV3J5Y6_1QrLPs5PQrKuSHmmxvw=s48-c-k-c0x00ffffff-no-rj",
+		videoIframe: "https://www.youtube.com/embed/2Oy4HpUJSgE",
+		channelSubscribers: 892000,
+		verified: true,
+		views: 39000,
+		duration: "3:34:17",
+		likes: 6300,
+		category: ["standup"],
+		description:
+			"Releasing my first (of few) crowd-work video from the show that I did in Bangalore, on 14th September 2019 at That Comedy Club. Crowd work is a sub-genre of stand up comedy, which is completely unscripted and based purely on audience interactions. ",
+		comments: [],
+	},
+	{
+		_id: uuid(),
+		title: "RAHUL SUBRAMANIAN",
 		channelName: "Honestly by Tanmay Bhat",
 		thumbnailURL:
 			"https://i.ytimg.com/vi/wA0W6mFlKOM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdZa8QjIzBn8TCoraLpi08X1vJww",
