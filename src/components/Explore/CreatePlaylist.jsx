@@ -43,16 +43,16 @@ const CreatePlaylist = () => {
 					New Playlist
 				</label>
 			</section>
-			<section className="card-footer  flex-row flex-grow-1 justify-content-center flex-gap-1 py-5 px-0">
+			<section className="card-footer flex-row flex-grow-1 justify-content-center flex-gap-1 py-5 px-0 w-100">
 				<button
-					className="cursor-pointer primary-btn save-btn p-5 b-radius-2 mx-5 my-0 text-bold flex-grow-1"
+					className="cursor-pointer primary-btn save-btn p-5 b-radius-2 my-0 text-bold flex-grow-1"
 					type="button"
 					onClick={createPlaylistSubmitHandler}
 				>
 					Save
 				</button>
 				<button
-					className="cursor-pointer outline-btn cancel-btn p-5 b-radius-2 mx-5 my-0 text-bold flex-grow-1"
+					className="cursor-pointer outline-btn cancel-btn p-5 b-radius-2 my-0 text-bold flex-grow-1"
 					type="button"
 					onClick={handleCreatePlaylistDismiss}
 				>
