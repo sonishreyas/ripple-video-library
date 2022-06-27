@@ -94,7 +94,7 @@ const setValueHandler = (e, field, type, loginDispatch) => {
 const setTestHandler = (loginDispatch) =>
 	loginDispatch({
 		type: "TEST_CREDENTIAL",
-		payload: { email: "test@gmail.com", password: "test123" },
+		payload: { email: "sonishreyas10@gmail.com", password: "Shreyas" },
 	});
 
 /**
