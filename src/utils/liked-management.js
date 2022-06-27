@@ -56,7 +56,6 @@ const removeFromLikedHandler = (e, videoId, likedDispatch) => {
 					authorization: JSON.parse(localStorage.getItem("user"))?.token,
 				},
 			});
-			console.log(response);
 			likedDispatch({
 				type: "REMOVE_ITEM",
 				payload: {

@@ -57,7 +57,6 @@ const removeFromWatchlaterHandler = (element, videoId, watchlaterDispatch) => {
 					authorization: JSON.parse(localStorage.getItem("user"))?.token,
 				},
 			});
-			console.log(response);
 			watchlaterDispatch({
 				type: "REMOVE_ITEM",
 				payload: {

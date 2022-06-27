@@ -54,6 +54,7 @@ const VideoDetails = () => {
 							frameBorder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowFullScreen
+							allow="autoplay"
 						></iframe>
 					</div>
 					<h3 className="text-bold py-5 my-5">{video.title}</h3>
