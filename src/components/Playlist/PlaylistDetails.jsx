@@ -49,7 +49,7 @@ const PlaylistDetails = () => {
 				<div className="flex-row flex-wrap flex-gap-2 m-5">
 					<div className="flex-column flex-gap-2">
 						<div className="cursor-pointer card card-shadow p-5 b-radius-2 h-auto">
-							<section className="flex-row justify-content-start align-start">
+							<section className="flex-row justify-content-start align-start details-card-img-container">
 								<img
 									src={
 										videos.length

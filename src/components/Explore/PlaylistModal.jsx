@@ -25,7 +25,7 @@ const PlaylistModal = () => {
 	return (
 		<div className="modal flex-row justify-content-center align-center">
 			<div className="modal-background"></div>
-			<div className="modal-content playlist-modal-container">
+			<div className="modal-content playlist-modal-container b-radius-2">
 				<ul className="radio-btn-container outline-container b-radius-2  p-5 m-10">
 					<li
 						className="profile-header flex-row justify-content-space-between align-center flex-wrap my-0 mx-0"

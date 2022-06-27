@@ -31,7 +31,7 @@ const Settings = () => {
 			<ul className="profile-list p-5">
 				<li className="no-list">
 					<button
-						className="primary-btn log-out-btn  p-5 b-radius-2 mx-5 my-0 text-bold"
+						className="primary-btn log-out-btn cursor-pointer p-5 b-radius-2 mx-5 my-0 text-bold"
 						onClick={handleLogout}
 						type="button"
 					>

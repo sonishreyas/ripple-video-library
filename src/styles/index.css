@@ -45,22 +45,6 @@ body {
 	padding: 0.4rem;
 }
 
-.grid-container {
-	display: grid;
-	grid: repeat(12, 100px);
-	margin: var(--m-0) var(--margin-auto);
-}
-
-.grid-container .nav {
-	width: 12rem;
-	grid-column: 1/2;
-}
-
-.grid-container .main {
-	grid-column: 2/13;
-	width: 100%;
-}
-
 /* Video Card */
 .video-card {
 	width: 30rem;
@@ -200,25 +184,35 @@ body {
 		height: 40rem;
 	}
 }
+
 .modal {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
+	padding: var(--p-0);
+	z-index: 15;
 	width: 100%;
-	z-index: 9;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
 }
+
 .modal-background {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
 	width: 100%;
+	height: 100vh;
+	grid-column: 1/13;
 	background-color: var(--tertiary-color);
 	opacity: 0.5;
+	z-index: 13;
 }
+
 .modal-content {
 	position: absolute;
+	z-index: 13;
+	background-color: var(--secondary-background-color);
+	width: 60rem;
+}
+
+.grid-container .modal {
+	grid-column: 1/13;
+	grid-row: 1/13;
 }
 
 .rui-alert--container {
@@ -303,6 +297,19 @@ body {
 	}
 }
 
+@media screen and (max-width: 450px) {
+	.list-card .horizontal-card-img {
+		height: 12rem;
+		width: 15rem;
+	}
+	.details-card-img-container {
+		width: 100%;
+	}
+	.details-card-img {
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 400px) {
 	.brand-logo {
 		width: 5rem;
@@ -311,4 +318,20 @@ body {
 	.brand-name {
 		left: -2rem;
 	}
+	.horizontal {
+		width: 100%;
+	}
+	.list-card .horizontal-card-img {
+		height: 12.7rem;
+		width: 17rem;
+	}
+}
+
+.horizontal {
+	position: relative;
+}
+.delete-icon {
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
 }
